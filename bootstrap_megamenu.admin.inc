@@ -75,8 +75,8 @@ function bootstrap_megamenu_configure_form($form, &$form_state, $menu_names = ar
 
   drupal_add_js('
     (function ($) {
-      Drupal.TBMegaMenu = Drupal.TBMegaMenu || {};
-      Drupal.TBMegaMenu.ajax_link = "' . (variable_get('clean_url', 0) ? '' : '?q=') . '";
+      Drupal.BSMegaMenu = Drupal.BSMegaMenu || {};
+      Drupal.BSMegaMenu.ajax_link = "' . (variable_get('clean_url', 0) ? '' : '?q=') . '";
     })(jQuery);
   ', 'inline');
 

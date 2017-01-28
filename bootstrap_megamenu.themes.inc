@@ -365,9 +365,9 @@ function template_preprocess_bootstrap_megamenu_backend(&$vars) {
   $vars['edit_links'] = base_path() . "admin/structure/menu/manage/$menu_name";
   $vars['edit_menu'] = base_path() . "admin/structure/menu/manage/$menu_name/edit";
 
-  $js_inline = 'Drupal.TBMegaMenu = Drupal.TBMegaMenu || {};
+  $js_inline = 'Drupal.BSMegaMenu = Drupal.BSMegaMenu || {};
   (function ($) {
-    Drupal.behaviors.tbMegaMenuAction = {
+    Drupal.behaviors.bsMegaMenuAction = {
       attach: function(context) {
         $("#bootstrap-megamenu-admin-mm-container").megamenuAdmin({menu_name: "' . $menu_name . '"});
       }

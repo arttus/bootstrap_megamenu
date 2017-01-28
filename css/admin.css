@@ -1,5 +1,5 @@
 /* -------------------------------------------------*/
-/* TB ADMIN STYLE
+/* BS ADMIN STYLE
 ----------------------------------------------------*/
 .bootstrap-megamenu .dropdown-menu li > a:hover,
 .bootstrap-megamenu .dropdown-menu li > a:focus,
@@ -22,7 +22,7 @@
 }
 
 /* -------------------------------------------------*/
-/* TB MEGAMENU ADMIN UI
+/* BS MEGAMENU ADMIN UI
 ---------------------------------------------------*/
 
 #bootstrap-megamenu-admin {
@@ -68,7 +68,7 @@
 
 /* Toolbox
 ---------------------*/
-#bootstrap-megamenu-admin-mm-tb {
+#bootstrap-megamenu-admin-mm-bs {
   float: left;
   text-shadow: 0 1px 1px #fff;
 }
@@ -77,7 +77,7 @@
   position: relative;
 }
 
-#bootstrap-megamenu-admin-mm-tb .admin-toolbox {
+#bootstrap-megamenu-admin-mm-bs .admin-toolbox {
   padding: 20px;
   display: none;
   box-sizing: border-box;
@@ -86,11 +86,11 @@
   -o-box-sizing: border-box;
 }
 
-#bootstrap-megamenu-admin-mm-tb .admin-toolbox h3 {
+#bootstrap-megamenu-admin-mm-bs .admin-toolbox h3 {
   margin-top: 0;
 }
 
-#bootstrap-megamenu-admin-mm-tb .admin-toolbox ul {
+#bootstrap-megamenu-admin-mm-bs .admin-toolbox ul {
   margin-left: 0;
   margin-right: 20px;
   float: left;
@@ -104,16 +104,16 @@
   margin-right: 20px;
 }
 
-#bootstrap-megamenu-admin-mm-tb .admin-toolbox li > label,
-#bootstrap-megamenu-admin-mm-tb .admin-toolbox li > label a,
+#bootstrap-megamenu-admin-mm-bs .admin-toolbox li > label,
+#bootstrap-megamenu-admin-mm-bs .admin-toolbox li > label a,
 #bootstrap-megamenu-admin-mm-intro li > label,
 #bootstrap-megamenu-admin-mm-intro li > label a {
   font-size: 11px;
   color: #999999;
 }
 
-#bootstrap-megamenu-admin-mm-tb .admin-toolbox li > label a:focus,
-#bootstrap-megamenu-admin-mm-tb .admin-toolbox li > label a:hover,
+#bootstrap-megamenu-admin-mm-bs .admin-toolbox li > label a:focus,
+#bootstrap-megamenu-admin-mm-bs .admin-toolbox li > label a:hover,
 #bootstrap-megamenu-admin-mm-intro li > label a:hover,
 #bootstrap-megamenu-admin-mm-intro li > label a:focus {
   color: #0077bb;

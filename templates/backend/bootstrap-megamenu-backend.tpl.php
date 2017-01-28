@@ -1,7 +1,7 @@
 <div id="bootstrap-megamenu-admin" class="hidden bootstrap-megamenu-admin bootstrap-megamenu">
   <div class="admin-inline-toolbox clearfix">
     <div class="bootstrap-megamenu-admin-mm-row clearfix">
-      <div id="bootstrap-megamenu-admin-mm-tb">
+      <div id="bootstrap-megamenu-admin-mm-bs">
         <div id="toolbox-loading" class="toolbox-loading">&nbsp;</div>
         <div id="toolbox-message" class="toolbox-message">&nbsp;</div>
         <div id="bootstrap-megamenu-admin-mm-intro" class="pull-left admin-toolbox">
