@@ -1,0 +1,58 @@
+<?php
+
+/**
+ * Implementation of hook_schema().
+ */
+function bootstrap_megamenu_schema() {
+  $schema = array();
+
+  $schema['bootstrap_megamenus'] = array(
+    'fields' => array(
+      'menu_name' => array(
+        'type' => 'varchar',
+        'length' => '255',
+        'not null' => TRUE
+      ),
+      'block_config' => array(
+        'type' => 'text',
+        'not null' => FALSE
+      ),
+      'menu_config' => array(
+        'type' => 'text',
+        'not null' => FALSE
+      ),
+      'language' => array(
+        'type' => 'varchar',
+        'length' => '12',
+        'not null' => TRUE,
+        'default' => ''
+      )
+    ),
+    'primary key' => array('menu_name', 'language')
+  );
+
+  return $schema;
+}
+
+/**
+ * Add language field
+ */
+function bootstrap_megamenu_update_7101(&$sandbox) {
+  // remove existing primary key
+  db_query("ALTER TABLE {bootstrap_megamenus} DROP primary key");
+  $field = array(
+    'type' => 'varchar',
+    'length' => 12,
+    'not null' => TRUE,
+    'default' => '',
+  );
+  $keys_new = array(
+    'primary key' => array(
+      'menu_name',
+      'language',
+    ),
+  );
+  db_add_field('bootstrap_megamenus', 'language', $field, $keys_new);
+  // set all existing menus to current language
+  db_query("UPDATE {bootstrap_megamenus} SET language = '" . $GLOBALS['language']->language . "'");
+}

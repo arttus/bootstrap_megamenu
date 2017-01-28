@@ -1,0 +1,317 @@
+<?php
+include_once drupal_get_path('module', 'bootstrap_megamenu') . '/bootstrap_megamenu.functions.inc';
+include_once drupal_get_path('module', 'bootstrap_megamenu') . '/bootstrap_megamenu.themes.inc';
+include_once drupal_get_path('module', 'bootstrap_megamenu') . '/bootstrap_megamenu.admin.inc';
+
+/**
+ * Implements hook_menu().
+ */
+function bootstrap_megamenu_menu() {
+  $items['admin/structure/bootstrap-megamenu/request'] = array(
+    'title' => 'Request',
+    'page callback' => 'bootstrap_megamenu_request',
+    'access arguments' => array('administer bootstrap_megamenu'),
+    'type' => MENU_SUGGESTED_ITEM,
+    'file' => 'bootstrap_megamenu.ajax.inc',
+  );
+
+  $items['admin/structure/bootstrap-megamenu'] = array(
+    'title' => 'TB Mega Menu',
+    'description' => t('TB Mega Menu'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('bootstrap_megamenu_admin_settings'),
+    'access arguments' => array('administer bootstrap_megamenu'),
+    'file' => 'bootstrap_megamenu.admin.inc',
+  );
+
+  $items['admin/structure/bootstrap-megamenu/%bootstrap_megamenu_menu_name'] = array(
+    'title' => 'Config TB Mega Menu',
+    'description' => t('Config TB Mega Menu'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array ('bootstrap_megamenu_configure_form', 3),
+    'type' => MENU_CALLBACK,
+    'access arguments' => array('administer bootstrap_megamenu'),
+    'file' => 'bootstrap_megamenu.admin.inc',
+  );
+
+  $items['admin/structure/bootstrap-megamenu/%bootstrap_megamenu_menu_name/config'] = array(
+    'title' => 'Config TB Mega Menu',
+    'weight' => -10,
+    'type' => MENU_DEFAULT_LOCAL_TASK,
+    'context' => MENU_CONTEXT_PAGE | MENU_CONTEXT_INLINE,
+  );
+  return $items;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function bootstrap_megamenu_permission() {
+  return array(
+    'administer bootstrap_megamenu' => array(
+      'title' => t('Administer TB Mega Menu'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_theme().
+ *
+ * @param array $existing
+ * @param string $type
+ * @param string $theme
+ * @param string $path
+ * @return array
+ */
+function bootstrap_megamenu_theme($existing, $type, $theme, $path) {
+  $items = array();
+  $items['bootstrap_megamenu'] = array(
+    'variables' => array(
+      'menu_name' => NULL,
+      'content' => NULL,
+      'section' => 'frontend',
+    ),
+    'template' => 'bootstrap-megamenu',
+    'path' => $path . '/templates',
+    'preprocess functions' => array(
+      'template_preprocess',
+      'template_preprocess_bootstrap_megamenu',
+    ),
+  );
+
+  $items['bootstrap_megamenu_nav'] = array(
+    'variables' => array(
+      'menu_name' => NULL,
+      'level' => NULL,
+      'items' => NULL,
+      'menu_config' => NULL,
+      'block_config' => NULL,
+      'trail' => NULL,
+      'section' => 'frontend',
+    ),
+    'template' => 'bootstrap-megamenu-nav',
+    'path' => $path . '/templates',
+    'preprocess functions' => array(
+      'template_preprocess',
+      'template_preprocess_bootstrap_megamenu_nav',
+    ),
+  );
+
+  $items['bootstrap_megamenu_item'] = array(
+    'variables' => array(
+      'menu_name' => NULL,
+      'a_classes' => array(),
+      'item' => NULL,
+      'level' => NULL,
+      'menu_config' => NULL,
+      'block_config' => NULL,
+      'trail' => NULL,
+      'submenu' => NULL,
+      'section' => 'frontend',
+    ),
+    'template' => 'bootstrap-megamenu-item',
+    'path' => $path . '/templates',
+    'preprocess functions' => array(
+      'template_preprocess',
+      'template_preprocess_bootstrap_megamenu_item',
+    ),
+  );
+
+  $items['bootstrap_megamenu_submenu'] = array(
+    'variables' => array(
+      'menu_name' => NULL,
+      'parent' => NULL,
+      'level' => NULL,
+      'menu_config' => NULL,
+      'block_config' => NULL,
+      'trail' => NULL,
+      'section' => 'frontend',
+    ),
+    'template' => 'bootstrap-megamenu-submenu',
+    'path' => $path . '/templates',
+    'preprocess functions' => array(
+      'template_preprocess',
+      'template_preprocess_bootstrap_megamenu_submenu',
+    ),
+  );
+
+  $items['bootstrap_megamenu_row'] = array(
+    'variables' => array(
+      'menu_name' => NULL,
+      'row' => NULL,
+      'parent' => NULL,
+      'level' => NULL,
+      'menu_config' => NULL,
+      'block_config' => NULL,
+      'trail' => NULL,
+      'section' => 'frontend',
+    ),
+    'template' => 'bootstrap-megamenu-row',
+    'path' => $path . '/templates',
+    'preprocess functions' => array(
+      'template_preprocess',
+      'template_preprocess_bootstrap_megamenu_row',
+    ),
+  );
+
+  $items['bootstrap_megamenu_column'] = array(
+    'variables' => array(
+      'menu_name' => NULL,
+      'col' => NULL,
+      'parent' => NULL,
+      'level' => NULL,
+      'menu_config' => NULL,
+      'block_config' => NULL,
+      'trail' => NULL,
+      'section' => 'frontend',
+    ),
+    'template' => 'bootstrap-megamenu-column',
+    'path' => $path . '/templates',
+    'preprocess functions' => array(
+      'template_preprocess',
+      'template_preprocess_bootstrap_megamenu_column',
+    ),
+  );
+
+  $items['bootstrap_megamenu_subnav'] = array(
+    'variables' => array(
+      'menu_name' => NULL,
+      'col' => NULL,
+      'level' => NULL,
+      'items' => NULL,
+      'menu_config' => NULL,
+      'block_config' => NULL,
+      'trail' => NULL,
+      'section' => 'frontend',
+    ),
+    'template' => 'bootstrap-megamenu-subnav',
+    'path' => $path . '/templates',
+    'preprocess functions' => array(
+      'template_preprocess',
+      'template_preprocess_bootstrap_megamenu_subnav',
+    ),
+  );
+
+  $items['bootstrap_megamenu_block'] = array(
+    'variables' => array(
+      'menu_name' => NULL,
+      'block_key' => NULL,
+      'section' => 'frontend',
+      'showblocktitle' => 1,
+    ),
+    'template' => 'bootstrap-megamenu-block',
+    'path' => $path . '/templates',
+    'preprocess functions' => array(
+      'template_preprocess',
+      'template_preprocess_bootstrap_megamenu_block',
+    ),
+  );
+
+  $items['bootstrap_megamenu_admin_settings'] = array(
+    'render element' => 'form',
+  );
+
+  $items['bootstrap_megamenu_backend'] = array(
+    'variables' => array(
+      'blocks' => NULL,
+      'menu_name' => NULL,
+      'menu_content' => NULL,
+    ),
+    'template' => 'bootstrap-megamenu-backend',
+    'path' => $path . '/templates/backend',
+    'preprocess functions' => array(
+      'template_preprocess',
+      'template_preprocess_bootstrap_megamenu_backend',
+    ),
+  );
+
+  return $items;
+}
+
+/*
+ * Implementation of hook_block_view()
+ */
+function bootstrap_megamenu_block_view($delta = 0) {
+  static $added_js_css = false;
+  if(!$added_js_css) {
+    $added_js_css = true;
+    if(module_exists('fontawesome') && file_exists(libraries_get_path('fontawesome') . '/css/font-awesome.css')) {
+      bootstrap_megamenu_add_css(libraries_get_path('fontawesome') . '/css/font-awesome.css');
+    }else{
+      drupal_add_css(FONT_AWESOME_44, array(
+        'type' => 'external'
+      ));
+    }
+
+    bootstrap_megamenu_add_css(drupal_get_path('module', 'bootstrap_megamenu') . '/css/bootstrap.css');
+    bootstrap_megamenu_add_css(drupal_get_path('module', 'bootstrap_megamenu') . '/css/base.css');
+    bootstrap_megamenu_add_css(drupal_get_path('module', 'bootstrap_megamenu') . '/css/default.css');
+    bootstrap_megamenu_add_css(drupal_get_path('module', 'bootstrap_megamenu') . '/css/compatibility.css');
+    drupal_add_js(drupal_get_path('module', 'bootstrap_megamenu') . '/js/bootstrap-megamenu-frontend.js');
+    drupal_add_js(drupal_get_path('module', 'bootstrap_megamenu') . '/js/bootstrrap-megamenu-touch.js');
+  }
+  return array('content' => array(
+    '#type' => 'markup',
+    '#markup' =>  theme('bootstrap_megamenu', array('menu_name' => $delta))
+  ));
+}
+
+/*
+ * Implements hook_block_info()
+ */
+function bootstrap_megamenu_block_info() {
+  $menus = bootstrap_megamenu_get_megamenus();
+  $blocks = array();
+  foreach($menus as $menu) {
+    $blocks[$menu->menu_name] = array(
+      'info' => t('TB Mega Menu') . ': ' . $menu->title, 'cache' => DRUPAL_NO_CACHE
+    );
+  }
+  return $blocks;
+}
+
+function bootstrap_megamenu_menu_name_load($bootstrap_megamenu_menu_name) {
+  return array($bootstrap_megamenu_menu_name);
+}
+
+/**
+ * Implements hook_theme_registry_alter().
+ */
+function bootstrap_megamenu_theme_registry_alter(&$theme_registry) {
+  if(isset($theme_registry['bootstrap_megamenu_submenu'])) {
+    $submenu_registry = $theme_registry['bootstrap_megamenu_submenu'];
+    $cache = array('bootstrap_megamenu_submenu' => $submenu_registry);
+    $templates = bootstrap_megamenu_find_hook_templates($cache, drupal_get_path('module', "bootstrap_megamenu") . "/templates/submenu-types");
+    foreach($templates as $hook => $info) {
+      if (!isset($theme_registry[$hook])) {
+        $new_hook = $submenu_registry;
+        $new_hook['path'] = $info['path'];
+        $new_hook['template'] = str_replace("_", "-", $hook);
+        $theme_registry[$hook] = $new_hook;
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_block_view_alter().
+ */
+function bootstrap_megamenu_block_view_alter(&$data, $block) {
+  if (isset($data['content']) && is_array($data['content']) && $block->module == 'bootstrap_megamenu') {
+    $data['content']['#contextual_links']['menu_config'] = array(
+      'admin/structure/menu/manage',
+      array($block->delta),
+    );
+
+    $data['content']['#contextual_links']['bootstrap_megamenu_config'] = array(
+      'admin/structure/bootstrap-megamenu', array($block->delta),
+    );
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function bootstrap_megamenu_form_menu_overview_form_alter(&$form, &$form_state) {
+  $form['#submit'][] = 'bootstrap_megamenu_update_megamenus';
+}
