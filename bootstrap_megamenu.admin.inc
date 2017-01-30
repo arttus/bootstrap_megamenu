@@ -1,8 +1,8 @@
 <?php
 
-define('FONT_AWESOME_44', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css');
-define('JS_CHOSEN_142', 'https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.jquery.min.js');
-define('CSS_CHOSEN_142', 'https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.min.css');
+define('FONT_AWESOME_47', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.7/css/font-awesome.min.css');
+define('JS_CHOSEN_162', 'https://cdnjs.cloudflare.com/ajax/libs/chosen/1.6.2/chosen.jquery.min.js');
+define('CSS_CHOSEN_162', 'https://cdnjs.cloudflare.com/ajax/libs/chosen/1.6.2/chosen.min.css');
 
 include_once drupal_get_path('module', 'bootstrap_megamenu') . '/bootstrap_megamenu.functions.inc';
 
@@ -45,7 +45,7 @@ function bootstrap_megamenu_configure_form($form, &$form_state, $menu_names = ar
     bootstrap_megamenu_add_css($lib_fontawesome['css']);
   }
   else {
-    drupal_add_css(FONT_AWESOME_44, array(
+    drupal_add_css(FONT_AWESOME_47, array(
       'type' => 'external'
     ));
   }
@@ -58,10 +58,10 @@ function bootstrap_megamenu_configure_form($form, &$form_state, $menu_names = ar
   else {
     // bootstrap_megamenu_add_css(drupal_get_path('module', 'bootstrap_megamenu') . '/css/chosen/chosen.min.css');
     // drupal_add_js(drupal_get_path('module', 'bootstrap_megamenu') . '/js/chosen/chosen.jquery.min.js');
-    drupal_add_js(JS_CHOSEN_142, array(
+    drupal_add_js(JS_CHOSEN_162, array(
       'type' => 'external'
     ));
-    drupal_add_css(CSS_CHOSEN_142, array(
+    drupal_add_css(CSS_CHOSEN_162, array(
       'type' => 'external'
     ));
   }

@@ -238,7 +238,7 @@ function bootstrap_megamenu_block_view($delta = 0) {
     if(module_exists('fontawesome') && file_exists(libraries_get_path('fontawesome') . '/css/font-awesome.css')) {
       bootstrap_megamenu_add_css(libraries_get_path('fontawesome') . '/css/font-awesome.css');
     }else{
-      drupal_add_css(FONT_AWESOME_44, array(
+      drupal_add_css(FONT_AWESOME_47, array(
         'type' => 'external'
       ));
     }
