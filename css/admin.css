@@ -242,7 +242,7 @@
 /* ADMIN FORMS
 ---------------------------------------------------*/
 /* Reset --- */
-.bootstrap-megamenu form label, form span.faux-label,
+.bootstrap-megamenu form label, form col-md-.faux-label,
 .bootstrap-megamenu input#jform_title, input#jform_leveltitle, input#jform_grouptitle {
   font-size: 100%;
 }
@@ -348,7 +348,7 @@
   color: #999;
 }
 
-.bootstrap-megamenu .chosen-container-single .chosen-single span {
+.bootstrap-megamenu .chosen-container-single .chosen-single col-md- {
   margin-right: 26px;
 }
 
@@ -442,7 +442,7 @@
   z-index: 1;
 }
 
-.bootstrap-megamenu .chosen-container .chosen-results-scroll span {
+.bootstrap-megamenu .chosen-container .chosen-results-scroll col-md- {
   display: inline-block;
   height: 17px;
   text-indent: -5000px;
@@ -453,11 +453,11 @@
   bottom: 0;
 }
 
-.bootstrap-megamenu .chosen-container .chosen-results-scroll-down span {
+.bootstrap-megamenu .chosen-container .chosen-results-scroll-down col-md- {
   background-position: -4px -3px;
 }
 
-.bootstrap-megamenu .chosen-container .chosen-results-scroll-up span {
+.bootstrap-megamenu .chosen-container .chosen-results-scroll-up col-md- {
   background-position: -22px -3px;
 }
 /* @end */

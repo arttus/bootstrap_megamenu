@@ -17,13 +17,13 @@
   display:none;
 }
 @media (max-width: 979px) {
-  .bootstrap-megamenu .nav-collapse .dropdown-menu .views-field-field-image a{
+  .bootstrap-megamenu .navbar-collapse .dropdown-menu .views-field-field-image a{
     border-top:0 none;
   }
   #user-login-form .item-list li a{
     border:0 none;
   }
-  .bootstrap-megamenu .nav-collapse, .bootstrap-megamenu .nav-collapse.collapse{
+  .bootstrap-megamenu .navbar-collapse, .bootstrap-megamenu .navbar-collapse.collapse{
     z-index: 999;
   }
 }

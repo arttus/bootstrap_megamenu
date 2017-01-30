@@ -35,7 +35,7 @@ function theme_bootstrap_megamenu_admin_settings($variables) {
     }
   }
   $header = array(t('Menu Name'), t('Menu Title'));
-  $header[] = array('data' => t('Operations'), 'colspan' => 2);
+  $header[] = array('data' => t('Operations'), 'col col-md-' => 2);
   return theme('table', array('header' => $header, 'rows' => $rows, 'empty' => t('No MegaMenu block available. <a href="@link">Add MegaMenu Block</a>.', array('@link' => url('admin/config/user-interface/bootstrap_megamenu/add'))), 'attributes' => array('id' => 'bootstrap_megamenu'))) . drupal_render_children($form);
 }
 
