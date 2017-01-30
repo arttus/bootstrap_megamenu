@@ -1,3 +1,4 @@
+
 .bootstrap-megamenu.style-green .dropdown-menu {
   border-bottom-color: #abba64;
 }
@@ -55,12 +56,12 @@
 }
 
 @media (max-width: 979px) {
-.bootstrap-megamenu.style-green .nav-collapse .nav > li > a:hover,
-.bootstrap-megamenu.style-green .nav-collapse .nav > li > a:focus {
+.bootstrap-megamenu.style-green .navbar-collapse .nav > li > a:hover,
+.bootstrap-megamenu.style-green .navbar-collapse .nav > li > a:focus {
 	color: #abba64;
   }
-.bootstrap-megamenu.style-green .nav-collapse .nav > li.active > a:hover,
-.bootstrap-megamenu.style-green .nav-collapse .nav > li.active > a:focus {
+.bootstrap-megamenu.style-green .navbar-collapse .nav > li.active > a:hover,
+.bootstrap-megamenu.style-green .navbar-collapse .nav > li.active > a:focus {
   background-color: #abba64;
   color: #fff;
 }

@@ -252,12 +252,12 @@ function template_preprocess_bootstrap_megamenu_column(&$vars) {
       $vars['attributes_array']['data-showblocktitle'] = $col_config['showblocktitle'];
 
       if ($vars['section'] !== 'frontend') {
-        $vars['close_button'] = '<span class="close fa fa-trash-o" title="' . t("Remove this block") . '">&nbsp;</span>';
+        $vars['close_button'] = '<col-md- class="close fa fa-trash-o" title="' . t("Remove this block") . '">&nbsp;</col-md->';
       }
     }
   }
   $vars['bootstrap_items'] = implode("\n", $bootstrap_items);
-  $vars['classes_array'][] = 'span' . $col_config['width'];
+  $vars['classes_array'][] = 'col-md-' . $col_config['width'];
   $vars['classes_array'][] = ' mega-col-nav';
   if (!empty($col_config['class'])) {
     $vars['classes_array'][] = $col_config['class'];

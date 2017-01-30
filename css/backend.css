@@ -18,7 +18,7 @@
   border-top: 0;
 }
 
-.bootstrap-megamenu .row-fluid [class*="span"] {
+.bootstrap-megamenu .row-fluid [class*="col-md-"] {
   border: 1px dotted #ccc;
   border-radius: 3px;
   transition: all 0.1s ease 0s;
@@ -29,7 +29,7 @@
 
 
 /* The Nav ---*/
-.bootstrap-megamenu .span12.mega-col-nav .mega-inner {
+.bootstrap-megamenu .col-md-12.mega-col-nav .mega-inner {
   padding: 10px;
 }
 
@@ -43,7 +43,7 @@
 }
 
 .bootstrap-megamenu .nav > li > a,
-.bootstrap-megamenu .nav > li > span {
+.bootstrap-megamenu .nav > li > col-md- {
   border: 1px solid #ddd;
   padding: 8px 20px;
   background: #f2f2f2;
@@ -104,7 +104,7 @@
 }
 
 .bootstrap-megamenu .mega-nav li > a,
-.bootstrap-megamenu .mega-nav li > span {
+.bootstrap-megamenu .mega-nav li > col-md- {
   padding: 5px 20px 5px 10px;
   border: 1px dotted #ddd;
   border-radius: 3px;
@@ -134,7 +134,7 @@
   background: #f2f2f2;
 }
 
-.bootstrap-megamenu .mega-group-ct > .row-fluid > [class*="span"] > .mega-inner {
+.bootstrap-megamenu .mega-group-ct > .row-fluid > [class*="col-md-"] > .mega-inner {
   padding: 10px;
 }
 
@@ -230,8 +230,8 @@
 }
 
 
-.bootstrap-megamenu [class*="span"].hover .bootstrap-block:after,
-.bootstrap-megamenu [class*="span"].selected .bootstrap-block:after {
+.bootstrap-megamenu [class*="col-md-"].hover .bootstrap-block:after,
+.bootstrap-megamenu [class*="col-md-"].selected .bootstrap-block:after {
   border-style: solid;
   border-color: #666666;
   background: #ffbb00;
@@ -260,8 +260,8 @@
 /* Hover Item ---*/
 .bootstrap-megamenu .nav-child.hover,
 .bootstrap-megamenu ul[class*="level"] > li > a.hover,
-.bootstrap-megamenu ul[class*="level"] > li > span.hover,
-.bootstrap-megamenu .row-fluid [class*="span"].hover {
+.bootstrap-megamenu ul[class*="level"] > li > col-md-.hover,
+.bootstrap-megamenu .row-fluid [class*="col-md-"].hover {
   background: #fffbf0 !important;
   color: #333333 !important;
   border: 1px solid #666666 !important;
@@ -308,10 +308,10 @@
 #bootstrap-megamenu-admin .dropdown-menu a {
   white-space: normal;
 }
-#bootstrap-megamenu-admin .row-fluid [class*="span"] {
+#bootstrap-megamenu-admin .row-fluid [class*="col-md-"] {
   margin-left: 2.12766%;
 }
-#bootstrap-megamenu-admin .row-fluid [class*="span"]:first-child {
+#bootstrap-megamenu-admin .row-fluid [class*="col-md-"]:first-child {
   margin-left: 0;
 }
 
@@ -357,7 +357,7 @@
   }
 .bootstrap-megamenu .row-fluid,
 .bootstrap-megamenu .mega-dropdown-menu,
-.bootstrap-megamenu .row-fluid [class*="span"] {
+.bootstrap-megamenu .row-fluid [class*="col-md-"] {
     width: 100% !important;
     min-width: 100% !important;
     left: 0 !important;

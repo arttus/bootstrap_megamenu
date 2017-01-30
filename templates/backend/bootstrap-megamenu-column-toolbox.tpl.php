@@ -22,7 +22,7 @@
     </li>
   </ul>
   <ul>
-    <li id="bootstrap-megamenu-grid-wrapper" title="<?php print t('Grid (1-12)') . ' - ' . t('Set number of grid columns the selected column spans') ?>">
+    <li id="bootstrap-megamenu-grid-wrapper" title="<?php print t('Grid (1-12)') . ' - ' . t('Set number of grid columns the selected column col-md-s') ?>">
       <label class="hasTip"><?php print t('Grid (1-12)') ?></label>
       <fieldset class="">
         <select class="toolcol-width toolbox-input toolbox-select input-mini" name="toolcol-width" data-name="width">

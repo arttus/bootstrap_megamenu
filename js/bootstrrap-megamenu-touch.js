@@ -23,7 +23,7 @@ Drupal.TBMegaMenu = Drupal.TBMegaMenu || {};
         });
      });
      /*
-     items.children('a').children('span.caret').each( function() {
+     items.children('a').children('col-md-.caret').each( function() {
 	var $item = $(this).parent();
         $item.click(function(event){
           tbitem = $item.parent();

@@ -26,8 +26,8 @@
   background-color: inherit;
   color: #7bb9e0;
 }
-.bootstrap-megamenu.style-black .nav-collapse .nav > li.active > a:hover,
-.bootstrap-megamenu.style-black .nav-collapse .nav > li.active > a:focus {
+.bootstrap-megamenu.style-black .navbar-collapse .nav > li.active > a:hover,
+.bootstrap-megamenu.style-black .navbar-collapse .nav > li.active > a:focus {
   background-color: inherit;
   color: #7bb9e0;
 }
@@ -155,12 +155,12 @@
   background-color: inherit;
 }
 
-.bootstrap-megamenu.style-black .nav-collapse,
-.bootstrap-megamenu.style-black .nav-collapse .dropdown-menu {
+.bootstrap-megamenu.style-black .navbar-collapse,
+.bootstrap-megamenu.style-black .navbar-collapse .dropdown-menu {
   background-color: #333;
 }
-.bootstrap-megamenu.style-black .nav-collapse .nav > li > a,
-.bootstrap-megamenu.style-black .nav-collapse .dropdown-menu a {
+.bootstrap-megamenu.style-black .navbar-collapse .nav > li > a,
+.bootstrap-megamenu.style-black .navbar-collapse .dropdown-menu a {
   border-bottom-color: #444;
   border-top-color: #444;
   color: #eee;
@@ -172,11 +172,11 @@
 }
 
 @media (max-width: 738px) {
-  .bootstrap-megamenu.style-black .nav-collapse .nav li a {
+  .bootstrap-megamenu.style-black .navbar-collapse .nav li a {
 	 border-top-color: #444;
   }
-  .bootstrap-megamenu.style-black .nav-collapse .nav > li > a,
-  .bootstrap-megamenu.style-black .nav-collapse .dropdown-menu a {
+  .bootstrap-megamenu.style-black .navbar-collapse .nav > li > a,
+  .bootstrap-megamenu.style-black .navbar-collapse .dropdown-menu a {
     border-bottom: none;
     border-top-color: #444;
     color: #eee;

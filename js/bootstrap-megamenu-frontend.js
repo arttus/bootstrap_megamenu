@@ -6,7 +6,7 @@ Drupal.TBMegaMenu = Drupal.TBMegaMenu || {};
   Drupal.TBMegaMenu.supportedScreens = [980];
   Drupal.TBMegaMenu.menuResponsive = function () {
     var windowWidth = window.innerWidth ? window.innerWidth : $(window).width();
-    var navCollapse = $('.bootstrap-megamenu').children('.nav-collapse');
+    var navCollapse = $('.bootstrap-megamenu').children('.navbar-collapse');
     if (windowWidth < Drupal.TBMegaMenu.supportedScreens[0]) {
       navCollapse.addClass('collapse');
       if (Drupal.TBMegaMenu.displayedMenuMobile) {
@@ -28,12 +28,12 @@ Drupal.TBMegaMenu = Drupal.TBMegaMenu || {};
       $('.bootstrap-megamenu-button', context).once('menuIstance', function () {
         var This = this;
         $(This).click(function() {
-          if(parseInt($(this).parent().children('.nav-collapse').height())) {
-            $(this).parent().children('.nav-collapse').css({height: 0, overflow: 'hidden'});
+          if(parseInt($(this).parent().children('.navbar-collapse').height())) {
+            $(this).parent().children('.navbar-collapse').css({height: 0, overflow: 'hidden'});
             Drupal.TBMegaMenu.displayedMenuMobile = false;
           }
           else {
-            $(this).parent().children('.nav-collapse').css({height: 'auto', overflow: 'visible'});
+            $(this).parent().children('.navbar-collapse').css({height: 'auto', overflow: 'visible'});
             Drupal.TBMegaMenu.displayedMenuMobile = true;
           }
         });
