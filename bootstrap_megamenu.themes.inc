@@ -219,7 +219,7 @@ function template_preprocess_bootstrap_megamenu_row(&$vars) {
     ));
   }
   $vars['columns'] = implode("\n", $cols);
-  $vars['classes_array'][] = 'row-fluid';
+  $vars['classes_array'][] = 'row';
 }
 
 function template_preprocess_bootstrap_megamenu_column(&$vars) {
@@ -252,7 +252,7 @@ function template_preprocess_bootstrap_megamenu_column(&$vars) {
       $vars['attributes_array']['data-showblocktitle'] = $col_config['showblocktitle'];
 
       if ($vars['section'] !== 'frontend') {
-        $vars['close_button'] = '<col-md- class="close fa fa-trash-o" title="' . t("Remove this block") . '">&nbsp;</col-md->';
+        $vars['close_button'] = '<span class="close fa fa-trash-o" title="' . t("Remove this block") . '">&nbsp;</span>';
       }
     }
   }

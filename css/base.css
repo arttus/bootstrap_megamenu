@@ -23,7 +23,7 @@
 .bootstrap-megamenu .mega-inner:after {
   clear: both;
 }
-.bootstrap-megamenu .row-fluid + .row-fluid {
+.bootstrap-megamenu .row + .row {
   padding-top: 10px;
   border-top: 1px solid #eeeeee;
 }
@@ -82,7 +82,7 @@
 .bootstrap-megamenu .mega-group-ct:after {
   clear: both;
 }
-.bootstrap-megamenu .mega-group-ct > .row-fluid > [class*="col-md-"] > .mega-inner {
+.bootstrap-megamenu .mega-group-ct > .row > [class*="col-md-"] > .mega-inner {
   padding: 0;
 }
 .bootstrap-megamenu .col-md-12.mega-col-nav .mega-inner {
@@ -911,8 +911,8 @@
 		padding: 5px;
 	}
 .bootstrap-megamenu .btn-group.divider,
-.bootstrap-megamenu .header .row-fluid .col-md-3,
-.bootstrap-megamenu .header .row-fluid .col-md-7,
+.bootstrap-megamenu .header .row .col-md-3,
+.bootstrap-megamenu .header .row .col-md-7,
 .bootstrap-megamenu .subhead-collapse {
 		display: none;
 	}

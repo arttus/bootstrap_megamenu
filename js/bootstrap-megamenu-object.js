@@ -106,7 +106,7 @@ Drupal.TBMegaMenu = Drupal.TBMegaMenu || {};
       if (sub.length == 0) {
         var column = Drupal.TBMegaMenu.TBElementsCounter['column'] + 1;
         Drupal.TBMegaMenu.TBElementsCounter['column'] ++;
-        sub = $('<div class="bootstrap-megamenu-submenu nav-child dropdown-menu mega-dropdown-menu"><div class="row-fluid"><div id=bootstrap-megamenu-column-' + column + ' class="col-md-12" data-width="12"><div class="mega-inner"></div></div></div></div>').appendTo(liitem);
+        sub = $('<div class="bootstrap-megamenu-submenu nav-child dropdown-menu mega-dropdown-menu"><div class="row"><div id=bootstrap-megamenu-column-' + column + ' class="col-md-12" data-width="12"><div class="mega-inner"></div></div></div></div>').appendTo(liitem);
         bindEvents (sub.find ('[class*="col-md-"]'));
         liitem.addClass ('mega');
       }
@@ -340,7 +340,7 @@ Drupal.TBMegaMenu = Drupal.TBMegaMenu || {};
     }
     var column = Drupal.TBMegaMenu.TBElementsCounter['column'] + 1;
     Drupal.TBMegaMenu.TBElementsCounter['column'] ++;
-    var $row = $('<div class="row-fluid"><div id=bootstrap-megamenu-column-' + column + ' class="col-md-12"><div class="mega-inner"></div></div></div>').appendTo(currentSelected.find('[class*="row"]:first').parent()),
+    var $row = $('<div class="row"><div id=bootstrap-megamenu-column-' + column + ' class="col-md-12"><div class="mega-inner"></div></div></div>').appendTo(currentSelected.find('[class*="row"]:first').parent()),
     $col = $row.children();
     bindEvents ($col);
     currentSelected = null;
@@ -435,7 +435,7 @@ Drupal.TBMegaMenu = Drupal.TBMegaMenu || {};
       data: { 'action': 'load', 'menu_name': options['menu_name']},
       complete: function( msg ) {
         $('#bootstrap-megamenu-admin-mm-container').html(msg.responseText).megamenuAdmin({'menu_name': options['menu_name']});
-        $('#bootstrap-megamenu-admin-mm-container').find('.mega-inner').children('col-md-.close').click(function() {
+        $('#bootstrap-megamenu-admin-mm-container').find('.mega-inner').children('span.close').click(function() {
           $(this).parent().html("");
         });
         $('#bootstrap-megamenu-admin-mm-tb #toolbox-loading').hide();
@@ -465,8 +465,10 @@ Drupal.TBMegaMenu = Drupal.TBMegaMenu || {};
       var level = parseInt($this.attr('data-level'));
       var $sub = $this.find ('.nav-child:first');
       var $rows = $sub.find('[class*="row"]:first').parent().children('[class*="row"]');
+
       $rows.each (function () {
         var $cols = $(this).children('[class*="col-md-"]');
+
         var cols = [];
         $cols.each (function(){
           var col_config = {};
@@ -486,6 +488,7 @@ Drupal.TBMegaMenu = Drupal.TBMegaMenu || {};
             }
           });
           $(this).children('.mega-inner').children('.bootstrap-megamenu-block').each(function() {
+
             var ele = {};
             ele['block_key'] = $(this).attr('data-block');
             ele['type'] = $(this).attr('data-type');
@@ -496,10 +499,12 @@ Drupal.TBMegaMenu = Drupal.TBMegaMenu || {};
             cols.push(col);
           }
         });
+
         if(cols.length) {
           rows.push(cols);
         }
       });
+
       var submenu_config = {};
       submenu_config['width'] = $this.children('.mega-dropdown-menu').attr('data-width') ? $this.children('.mega-dropdown-menu').attr('data-width') : "";
       submenu_config['class'] = $this.children('.mega-dropdown-menu').attr('data-class') ? $this.children('.mega-dropdown-menu').attr('data-class') : "";
@@ -524,10 +529,16 @@ Drupal.TBMegaMenu = Drupal.TBMegaMenu || {};
     block_config['always-show-submenu'] = $('#bootstrap-megamenu-admin-mm-intro .toolitem-always-show-submenu').attr('data-always-show-submenu');
     $('#bootstrap-megamenu-admin-mm-tb #toolbox-message').html("").hide();
     $('#bootstrap-megamenu-admin-mm-tb #toolbox-loading').show();
+    if($('input[name="use_v3"]').is(':checked')){
+      use_v3 = 1;
+    }
+    else {
+      use_v3 = 0;
+    }
     $.ajax({
       type: "POST",
       url: Drupal.settings.basePath + Drupal.settings.pathPrefix + Drupal.TBMegaMenu.ajax_link + "admin/structure/bootstrap-megamenu/request",
-      data: {'action': 'save', 'menu_name': options['menu_name'], 'menu_config': JSON.stringify(menu_config), 'block_config': JSON.stringify(block_config)},
+      data: {'action': 'save', 'menu_name': options['menu_name'], 'use_v3': use_v3, 'menu_config': JSON.stringify(menu_config), 'block_config': JSON.stringify(block_config)},
       complete: function( msg ) {
         $('#bootstrap-megamenu-admin-mm-tb #toolbox-loading').hide();
 		$div = $('<div id="console" class="clearfix"><div class="messages status"><h2 class="element-invisible">Status message</h2>' + Drupal.t("Saved config sucessfully!") + '</div></div>');
@@ -765,9 +776,9 @@ Drupal.TBMegaMenu = Drupal.TBMegaMenu || {};
     case 'caption':
       if (type == 'item') {
         currentSelected.closest('li').attr('data-' + name, value);
-        currentSelected.find('col-md-.mega-caption').remove();
+        currentSelected.find('span.mega-caption').remove();
         if (value) {
-          currentSelected.append($('<col-md- class="mega-caption">'+value+'</col-md->'));
+          currentSelected.append($('<span class="mega-caption">'+value+'</span>'));
         }
       }
       break;
@@ -804,12 +815,12 @@ Drupal.TBMegaMenu = Drupal.TBMegaMenu || {};
           complete: function( msg ) {
             var resp = $.parseJSON(msg.responseText);
             var content = resp.content ? resp.content : "";
-            var close_button = $('<col-md- class="close fa fa-trash-o" title="' + Drupal.t("Remove this block") + '">&nbsp;</col-md->');
+            var close_button = $('<span class="close fa fa-trash-o" title="' + Drupal.t("Remove this block") + '">&nbsp;</span>');
             var id = resp.id ? resp.id : "";
             var currentElement = $("#" + id);
             if(currentElement.length) {
               currentElement.children('.mega-inner').html("").append(close_button).append($(content)).find(':input').removeAttr('name');
-              currentElement.children('.mega-inner').children('col-md-.close').click(function() {
+              currentElement.children('.mega-inner').children('span.close').click(function() {
                 $(this).parent().html("");
               });
             }

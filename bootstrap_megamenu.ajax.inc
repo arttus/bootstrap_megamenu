@@ -21,6 +21,9 @@ function bootstrap_megamenu_request() {
           db_insert('bootstrap_megamenus')->fields(array('menu_name' => $menu_name, 'block_config' => $block_config, 'menu_config' => $menu_config, 'language' => $language->language))->execute();
         }
       }
+     
+       variable_set('bootstrap_usev3', $_POST['use_v3']);
+      
       break;
     case 'load_block':
       $block_key = isset($_POST['block_key']) ? $_POST['block_key'] : NULL;

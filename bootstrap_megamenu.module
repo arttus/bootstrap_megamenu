@@ -242,8 +242,10 @@ function bootstrap_megamenu_block_view($delta = 0) {
         'type' => 'external'
       ));
     }
-
-    bootstrap_megamenu_add_css(drupal_get_path('module', 'bootstrap_megamenu') . '/css/bootstrap.css');
+    $use_v3 = variable_get('bootstrap_usev3', 1);
+    if($use_v3 == 1){
+    bootstrap_megamenu_add_css(drupal_get_path('module', 'bootstrap_megamenu') . '/css/base.css');
+    }
     bootstrap_megamenu_add_css(drupal_get_path('module', 'bootstrap_megamenu') . '/css/base.css');
     bootstrap_megamenu_add_css(drupal_get_path('module', 'bootstrap_megamenu') . '/css/default.css');
     bootstrap_megamenu_add_css(drupal_get_path('module', 'bootstrap_megamenu') . '/css/compatibility.css');

@@ -578,7 +578,6 @@ function bootstrap_megamenu_replace_css() {
     drupal_get_path('module', 'bootstrap_megamenu') . '/css/admin.css',
     drupal_get_path('module', 'bootstrap_megamenu') . '/css/backend.css',
     drupal_get_path('module', 'bootstrap_megamenu') . '/css/base.css',
-    drupal_get_path('module', 'bootstrap_megamenu') . '/css/bootstrap.css',
     drupal_get_path('module', 'bootstrap_megamenu') . '/css/bootstrap-responsive.css',
     drupal_get_path('module', 'bootstrap_megamenu') . '/css/default.css',
     drupal_get_path('module', 'bootstrap_megamenu') . '/css/styles/black.css',
@@ -586,6 +585,10 @@ function bootstrap_megamenu_replace_css() {
     drupal_get_path('module', 'bootstrap_megamenu') . '/css/styles/green.css',
     drupal_get_path('module', 'bootstrap_megamenu') . '/css/styles/orange.css',
   );
+  $use_v3 = variable_get('bootstrap_usev3', 1);
+  if($use_v3 == 1){
+   $files[] = drupal_get_path('module', 'bootstrap_megamenu') . '/css/bootstrap.css';
+  }
   foreach ($files as $css_file) {
     $output = array();
     $f = fopen($css_file, "r");

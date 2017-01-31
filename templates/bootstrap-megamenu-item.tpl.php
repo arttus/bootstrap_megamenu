@@ -5,10 +5,10 @@
     <?php endif;?>    
     <?php print t($item['link']['title']);?>
     <?php if($submenu && $block_config['auto-arrow']) :?>
-      <col-md- class="caret"></col-md->
+      <span class="caret"></span>
     <?php endif;?>
     <?php if(!empty($item_config['caption'])) : ?>
-      <col-md- class="mega-caption"><?php print t($item_config['caption']);?></col-md->
+      <span class="mega-caption"><?php print t($item_config['caption']);?></span>
     <?php endif;?>
   </a>
   <?php print $submenu ? $submenu : "";?>

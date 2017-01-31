@@ -13,12 +13,12 @@
 
 
 /* Menu Grid ---*/
-.bootstrap-megamenu .row-fluid + .row-fluid {
+.bootstrap-megamenu .row + .row {
   margin-top: 10px;
   border-top: 0;
 }
 
-.bootstrap-megamenu .row-fluid [class*="col-md-"] {
+.bootstrap-megamenu .row [class*="col-md-"] {
   border: 1px dotted #ccc;
   border-radius: 3px;
   transition: all 0.1s ease 0s;
@@ -134,7 +134,7 @@
   background: #f2f2f2;
 }
 
-.bootstrap-megamenu .mega-group-ct > .row-fluid > [class*="col-md-"] > .mega-inner {
+.bootstrap-megamenu .mega-group-ct > .row > [class*="col-md-"] > .mega-inner {
   padding: 10px;
 }
 
@@ -261,7 +261,7 @@
 .bootstrap-megamenu .nav-child.hover,
 .bootstrap-megamenu ul[class*="level"] > li > a.hover,
 .bootstrap-megamenu ul[class*="level"] > li > col-md-.hover,
-.bootstrap-megamenu .row-fluid [class*="col-md-"].hover {
+.bootstrap-megamenu .row [class*="col-md-"].hover {
   background: #fffbf0 !important;
   color: #333333 !important;
   border: 1px solid #666666 !important;
@@ -308,10 +308,10 @@
 #bootstrap-megamenu-admin .dropdown-menu a {
   white-space: normal;
 }
-#bootstrap-megamenu-admin .row-fluid [class*="col-md-"] {
+#bootstrap-megamenu-admin .row [class*="col-md-"] {
   margin-left: 2.12766%;
 }
-#bootstrap-megamenu-admin .row-fluid [class*="col-md-"]:first-child {
+#bootstrap-megamenu-admin .row [class*="col-md-"]:first-child {
   margin-left: 0;
 }
 
@@ -355,9 +355,9 @@
 .bootstrap-megamenu .mega-inner {
     padding: 10px 20px;
   }
-.bootstrap-megamenu .row-fluid,
+.bootstrap-megamenu .row,
 .bootstrap-megamenu .mega-dropdown-menu,
-.bootstrap-megamenu .row-fluid [class*="col-md-"] {
+.bootstrap-megamenu .row [class*="col-md-"] {
     width: 100% !important;
     min-width: 100% !important;
     left: 0 !important;
@@ -368,7 +368,7 @@
     -ms-transform: none !important;
     -o-transform: none !important;
   }
-.bootstrap-megamenu .row-fluid + .row-fluid {
+.bootstrap-megamenu .row + .row {
     padding-top: 10px;
     border-top: 1px solid #eeeeee;
   }

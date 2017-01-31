@@ -31,7 +31,7 @@
   background-color: inherit;
   color: #7bb9e0;
 }
-.bootstrap-megamenu.style-black .row-fluid + .row-fluid {
+.bootstrap-megamenu.style-black .row + .row {
   border-color: #333;
 }
 .bootstrap-megamenu.style-black .dropdown .caret {
@@ -181,7 +181,7 @@
     border-top-color: #444;
     color: #eee;
   }
-  .bootstrap-megamenu.style-black .row-fluid + .row-fluid {
+  .bootstrap-megamenu.style-black .row + .row {
 	border-top-color: #444;
   }
 }

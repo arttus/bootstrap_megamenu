@@ -1,6 +1,6 @@
 <?php
 
-define('FONT_AWESOME_47', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.7/css/font-awesome.min.css');
+define('FONT_AWESOME_47', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 define('JS_CHOSEN_162', 'https://cdnjs.cloudflare.com/ajax/libs/chosen/1.6.2/chosen.jquery.min.js');
 define('CSS_CHOSEN_162', 'https://cdnjs.cloudflare.com/ajax/libs/chosen/1.6.2/chosen.min.css');
 
@@ -40,6 +40,7 @@ function theme_bootstrap_megamenu_admin_settings($variables) {
 }
 
 function bootstrap_megamenu_configure_form($form, &$form_state, $menu_names = array()) {
+$form['use_v3'] = array('#type'=>'checkbox', '#title'=>'Use default bootstrap CSS (Uncheck if you are using a boostrap base theme)', '#default_value'=>variable_get('bootstrap_usev3', 1));
   $lib_fontawesome = bootstrap_megamenu_check_library('fontawesome', 'fontawesome');
   if(module_exists('fontawesome') && $lib_fontawesome) {
     bootstrap_megamenu_add_css($lib_fontawesome['css']);
@@ -65,7 +66,10 @@ function bootstrap_megamenu_configure_form($form, &$form_state, $menu_names = ar
       'type' => 'external'
     ));
   }
+   $use_v3 = variable_get('bootstrap_usev3', 1);
+ 
   bootstrap_megamenu_add_css(drupal_get_path('module', 'bootstrap_megamenu') . '/css/bootstrap.css');
+
   bootstrap_megamenu_add_css(drupal_get_path('module', 'bootstrap_megamenu') . '/css/base.css');
   bootstrap_megamenu_add_css(drupal_get_path('module', 'bootstrap_megamenu') . '/css/admin.css');
   bootstrap_megamenu_add_css(drupal_get_path('module', 'bootstrap_megamenu') . '/css/backend.css');
@@ -89,5 +93,6 @@ function bootstrap_megamenu_configure_form($form, &$form_state, $menu_names = ar
       )),
     );
   }
+
   return $form;
 }
