@@ -449,9 +449,9 @@ function bootstrap_megamenu_render_block($delta = 0) {
       '#type' => 'markup',
       '#markup' => theme('bootstrap_megamenu', array('menu_name' => $delta, 'section' => 'backend',)),
   ));
-  drupal_add_js('Drupal.TBMegaMenu = Drupal.TBMegaMenu || {};', array('type' => 'inline'));
-  drupal_add_js('Drupal.TBMegaMenu.TBElementsCounter = ' . json_encode($bootstrap_elements_counter), array('type' => 'inline'));
-  drupal_add_js('Drupal.TBMegaMenu.TBElementsCounter = ' . json_encode($bootstrap_elements_counter), array('type' => 'inline'));
+  drupal_add_js('Drupal.BSMegaMenu = Drupal.BSMegaMenu || {};', array('type' => 'inline'));
+  drupal_add_js('Drupal.BSMegaMenu.BSElementsCounter = ' . json_encode($bootstrap_elements_counter), array('type' => 'inline'));
+  drupal_add_js('Drupal.BSMegaMenu.BSElementsCounter = ' . json_encode($bootstrap_elements_counter), array('type' => 'inline'));
   return $block;
 }
 

@@ -35,7 +35,7 @@ function theme_bootstrap_megamenu_admin_settings($variables) {
     }
   }
   $header = array(t('Menu Name'), t('Menu Title'));
-  $header[] = array('data' => t('Operations'), 'colcol-md-' => 2);
+  $header[] = array('data' => t('Operations'), 'col col-md-' => 2);
   return theme('table', array('header' => $header, 'rows' => $rows, 'empty' => t('No MegaMenu block available. <a href="@link">Add MegaMenu Block</a>.', array('@link' => url('admin/config/user-interface/bootstrap_megamenu/add'))), 'attributes' => array('id' => 'bootstrap_megamenu'))) . drupal_render_children($form);
 }
 
@@ -79,8 +79,8 @@ $form['use_v3'] = array('#type'=>'checkbox', '#title'=>'Use default bootstrap CS
 
   drupal_add_js('
     (function ($) {
-      Drupal.TBMegaMenu = Drupal.TBMegaMenu || {};
-      Drupal.TBMegaMenu.ajax_link = "' . (variable_get('clean_url', 0) ? '' : '?q=') . '";
+      Drupal.BSMegaMenu = Drupal.BSMegaMenu || {};
+      Drupal.BSMegaMenu.ajax_link = "' . (variable_get('clean_url', 0) ? '' : '?q=') . '";
     })(jQuery);
   ', 'inline');
 

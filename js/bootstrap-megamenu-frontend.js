@@ -1,15 +1,15 @@
-Drupal.TBMegaMenu = Drupal.TBMegaMenu || {};
+Drupal.BSMegaMenu = Drupal.BSMegaMenu || {};
 
 (function ($) {
-  Drupal.TBMegaMenu.oldWindowWidth = 0;
-  Drupal.TBMegaMenu.displayedMenuMobile = false;
-  Drupal.TBMegaMenu.supportedScreens = [980];
-  Drupal.TBMegaMenu.menuResponsive = function () {
+  Drupal.BSMegaMenu.oldWindowWidth = 0;
+  Drupal.BSMegaMenu.displayedMenuMobile = false;
+  Drupal.BSMegaMenu.supportedScreens = [980];
+  Drupal.BSMegaMenu.menuResponsive = function () {
     var windowWidth = window.innerWidth ? window.innerWidth : $(window).width();
-    var navCollapse = $('.bootstrap-megamenu').children('.navbar-collapse');
-    if (windowWidth < Drupal.TBMegaMenu.supportedScreens[0]) {
+    var navCollapse = $('.bootstrap-megamenu').children('.nav-collapse');
+    if (windowWidth < Drupal.BSMegaMenu.supportedScreens[0]) {
       navCollapse.addClass('collapse');
-      if (Drupal.TBMegaMenu.displayedMenuMobile) {
+      if (Drupal.BSMegaMenu.displayedMenuMobile) {
         navCollapse.css({height: 'auto', overflow: 'visible'});
       } else {
         navCollapse.css({height: 0, overflow: 'hidden'});
@@ -22,19 +22,19 @@ Drupal.TBMegaMenu = Drupal.TBMegaMenu || {};
       }
     }
   };
-  
-  Drupal.behaviors.tbMegaMenuAction = {
+
+  Drupal.behaviors.bsMegaMenuAction = {
     attach: function(context) {
       $('.bootstrap-megamenu-button', context).once('menuIstance', function () {
         var This = this;
         $(This).click(function() {
-          if(parseInt($(this).parent().children('.navbar-collapse').height())) {
-            $(this).parent().children('.navbar-collapse').css({height: 0, overflow: 'hidden'});
-            Drupal.TBMegaMenu.displayedMenuMobile = false;
+          if(parseInt($(this).parent().children('.nav-collapse').height())) {
+            $(this).parent().children('.nav-collapse').css({height: 0, overflow: 'hidden'});
+            Drupal.BSMegaMenu.displayedMenuMobile = false;
           }
           else {
-            $(this).parent().children('.navbar-collapse').css({height: 'auto', overflow: 'visible'});
-            Drupal.TBMegaMenu.displayedMenuMobile = true;
+            $(this).parent().children('.nav-collapse').css({height: 'auto', overflow: 'visible'});
+            Drupal.BSMegaMenu.displayedMenuMobile = true;
           }
         });
       });
@@ -84,9 +84,9 @@ Drupal.TBMegaMenu = Drupal.TBMegaMenu || {};
       
       $(window).resize(function() {
         var windowWidth = window.innerWidth ? window.innerWidth : $(window).width();
-        if(windowWidth != Drupal.TBMegaMenu.oldWindowWidth){
-          Drupal.TBMegaMenu.oldWindowWidth = windowWidth;
-          Drupal.TBMegaMenu.menuResponsive();
+        if (windowWidth != Drupal.BSMegaMenu.oldWindowWidth) {
+          Drupal.BSMegaMenu.oldWindowWidth = windowWidth;
+          Drupal.BSMegaMenu.menuResponsive();
         }
       });
     },

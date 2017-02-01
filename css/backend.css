@@ -330,7 +330,7 @@
   display: block;
 }
 
-#bootstrap-megamenu-admin-mm-tb #toolbox-loading {
+#bootstrap-megamenu-admin-mm-bs #toolbox-loading {
   background-image: url('../images/ajax-loader.gif');
   width: 220px;
   height: 19px;
@@ -341,7 +341,7 @@
   margin-left: -110px;
 }
 
-#bootstrap-megamenu-admin-mm-tb #toolbox-message {
+#bootstrap-megamenu-admin-mm-bs #toolbox-message {
   color: red;
   display: none;
   position: absolute;

@@ -1,20 +1,20 @@
-Drupal.TBMegaMenu = Drupal.TBMegaMenu || {};
+Drupal.BSMegaMenu = Drupal.BSMegaMenu || {};
 
 !function ($) {
   var currentSelected = null,
   megamenu, nav_items, nav_subs, nav_cols, nav_all;
-  Drupal.TBMegaMenu.lockedAjax = false;
+  Drupal.BSMegaMenu.lockedAjax = false;
 
-  Drupal.TBMegaMenu.lockAjax = function() {
-    Drupal.TBMegaMenu.lockedAjax = true;
+  Drupal.BSMegaMenu.lockAjax = function() {
+    Drupal.BSMegaMenu.lockedAjax = true;
   }
 
-  Drupal.TBMegaMenu.isLockedAjax = function() {
-    return Drupal.TBMegaMenu.lockedAjax;
+  Drupal.BSMegaMenu.isLockedAjax = function() {
+    return Drupal.BSMegaMenu.lockedAjax;
   }
 
-  Drupal.TBMegaMenu.releaseAjax = function() {
-    Drupal.TBMegaMenu.lockedAjax = false;
+  Drupal.BSMegaMenu.releaseAjax = function() {
+    Drupal.BSMegaMenu.lockedAjax = false;
   }
 
   $.fn.megamenuAdmin = function (options) {
@@ -23,7 +23,7 @@ Drupal.TBMegaMenu = Drupal.TBMegaMenu || {};
     megamenu = $(this).find('.bootstrap-megamenu');
     nav_items = megamenu.find('ul[class*="level"]>li>:first-child');
     nav_subs = megamenu.find('.nav-child');
-    nav_cols = megamenu.find('[class*="col-md-"]');
+    nav_cols = megamenu.find('[class*="span"]');
 
     nav_all = nav_items.add(nav_subs).add(nav_cols);
     nav_items.each (function () {
@@ -104,10 +104,12 @@ Drupal.TBMegaMenu = Drupal.TBMegaMenu || {};
     }
     if (sub.length == 0 || sub.css('display') == 'none') {
       if (sub.length == 0) {
-        var column = Drupal.TBMegaMenu.TBElementsCounter['column'] + 1;
-        Drupal.TBMegaMenu.TBElementsCounter['column'] ++;
+        var column = Drupal.BSMegaMenu.BSElementsCounter['column'] + 1;
+        Drupal.BSMegaMenu.BSElementsCounter['column'] ++;
+
         sub = $('<div class="bootstrap-megamenu-submenu nav-child dropdown-menu mega-dropdown-menu"><div class="row"><div id=bootstrap-megamenu-column-' + column + ' class="col-md-12" data-width="12"><div class="mega-inner"></div></div></div></div>').appendTo(liitem);
         bindEvents (sub.find ('[class*="col-md-"]'));
+
         liitem.addClass ('mega');
       }
       else {
@@ -338,8 +340,8 @@ Drupal.TBMegaMenu = Drupal.TBMegaMenu || {};
     if (!currentSelected) {
       return ;
     }
-    var column = Drupal.TBMegaMenu.TBElementsCounter['column'] + 1;
-    Drupal.TBMegaMenu.TBElementsCounter['column'] ++;
+    var column = Drupal.BSMegaMenu.BSElementsCounter['column'] + 1;
+    Drupal.BSMegaMenu.BSElementsCounter['column'] ++;
     var $row = $('<div class="row"><div id=bootstrap-megamenu-column-' + column + ' class="col-md-12"><div class="mega-inner"></div></div></div>').appendTo(currentSelected.find('[class*="row"]:first').parent()),
     $col = $row.children();
     bindEvents ($col);
@@ -355,8 +357,8 @@ Drupal.TBMegaMenu = Drupal.TBMegaMenu || {};
     var colcount = $cols.length + 1;
     var colwidths = defaultColumnsWidth (colcount);
 
-    var column = Drupal.TBMegaMenu.TBElementsCounter['column'] + 1;
-    Drupal.TBMegaMenu.TBElementsCounter['column'] ++;
+    var column = Drupal.BSMegaMenu.BSElementsCounter['column'] + 1;
+    Drupal.BSMegaMenu.BSElementsCounter['column'] ++;
 
     var $col = $('<div id=bootstrap-megamenu-column-' + column + '><div class="mega-inner"></div></div>');
     if (actions.datas.addfirst) {
@@ -420,18 +422,18 @@ Drupal.TBMegaMenu = Drupal.TBMegaMenu || {};
   }
 
   actions.resetConfig = function (options) {
-    if(Drupal.TBMegaMenu.isLockedAjax()) {
+    if(Drupal.BSMegaMenu.isLockedAjax()) {
       window.setTimeout(function() {
         actions.resetConfig(options);
       }, 200);
       return;
     }
-    Drupal.TBMegaMenu.lockAjax();
+    Drupal.BSMegaMenu.lockAjax();
     $('#bootstrap-megamenu-admin-mm-tb #toolbox-message').html("").hide();
     $('#bootstrap-megamenu-admin-mm-tb #toolbox-loading').show();
     $.ajax({
       type: "POST",
-      url: Drupal.settings.basePath + Drupal.settings.pathPrefix + Drupal.TBMegaMenu.ajax_link + Drupal.TBMegaMenu.ajax_link + "admin/structure/bootstrap-megamenu/request",
+      url: Drupal.settings.basePath + Drupal.settings.pathPrefix + Drupal.BSMegaMenu.ajax_link + Drupal.BSMegaMenu.ajax_link + "admin/structure/bootstrap-megamenu/request",
       data: { 'action': 'load', 'menu_name': options['menu_name']},
       complete: function( msg ) {
         $('#bootstrap-megamenu-admin-mm-container').html(msg.responseText).megamenuAdmin({'menu_name': options['menu_name']});
@@ -443,19 +445,19 @@ Drupal.TBMegaMenu = Drupal.TBMegaMenu || {};
         window.setTimeout(function() {
           $('#bootstrap-megamenu-admin-mm-tb #toolbox-message').html("").hide();
         }, 5000);
-        Drupal.TBMegaMenu.releaseAjax();
+        Drupal.BSMegaMenu.releaseAjax();
       }
     });
   }
 
   actions.saveConfig = function (options) {
-    if(Drupal.TBMegaMenu.isLockedAjax()) {
+    if(Drupal.BSMegaMenu.isLockedAjax()) {
       window.setTimeout(function() {
         actions.saveConfig(options);
       }, 200);
       return;
     }
-    Drupal.TBMegaMenu.lockAjax();
+    Drupal.BSMegaMenu.lockAjax();
     var menu_config = {},
     items = megamenu.find('ul[class*="level"] > li');
     items.each (function(){
@@ -537,7 +539,7 @@ Drupal.TBMegaMenu = Drupal.TBMegaMenu || {};
     }
     $.ajax({
       type: "POST",
-      url: Drupal.settings.basePath + Drupal.settings.pathPrefix + Drupal.TBMegaMenu.ajax_link + "admin/structure/bootstrap-megamenu/request",
+      url: Drupal.settings.basePath + Drupal.settings.pathPrefix + Drupal.BSMegaMenu.ajax_link + "admin/structure/bootstrap-megamenu/request",
       data: {'action': 'save', 'menu_name': options['menu_name'], 'use_v3': use_v3, 'menu_config': JSON.stringify(menu_config), 'block_config': JSON.stringify(block_config)},
       complete: function( msg ) {
         $('#bootstrap-megamenu-admin-mm-tb #toolbox-loading').hide();
@@ -546,7 +548,7 @@ Drupal.TBMegaMenu = Drupal.TBMegaMenu || {};
         window.setTimeout(function() {
           $('#bootstrap-megamenu-admin-mm-tb #toolbox-message').html("").hide();
         }, 5000);
-        Drupal.TBMegaMenu.releaseAjax();
+        Drupal.BSMegaMenu.releaseAjax();
       }
     });
   }
@@ -799,18 +801,18 @@ Drupal.TBMegaMenu = Drupal.TBMegaMenu || {};
   }
 
   callAjax = function(data) {
-    if(Drupal.TBMegaMenu.isLockedAjax()) {
+    if(Drupal.BSMegaMenu.isLockedAjax()) {
       window.setTimeout(function() {
           callAjax(data);
       }, 200);
       return;
     }
-    Drupal.TBMegaMenu.lockAjax();
+    Drupal.BSMegaMenu.lockAjax();
     switch(data.action) {
     case 'load_block':
         $.ajax({
           type: "POST",
-          url: Drupal.settings.basePath + Drupal.settings.pathPrefix + Drupal.TBMegaMenu.ajax_link + "admin/structure/bootstrap-megamenu/request",
+          url: Drupal.settings.basePath + Drupal.settings.pathPrefix + Drupal.BSMegaMenu.ajax_link + "admin/structure/bootstrap-megamenu/request",
           data: data,
           complete: function( msg ) {
             var resp = $.parseJSON(msg.responseText);
@@ -825,7 +827,7 @@ Drupal.TBMegaMenu = Drupal.TBMegaMenu || {};
               });
             }
             $('#bootstrap-megamenu-admin-mm-tb #toolbox-loading').hide();
-            Drupal.TBMegaMenu.releaseAjax();
+            Drupal.BSMegaMenu.releaseAjax();
           }
         });
       break;
@@ -887,7 +889,7 @@ Drupal.TBMegaMenu = Drupal.TBMegaMenu || {};
 }(jQuery);
 
 !function($){
-  $.extend(Drupal.TBMegaMenu, {
+  $.extend(Drupal.BSMegaMenu, {
     prepare: function(){
       var panel = $('#jform_params_mm_type').closest ('.controls');
       panel.append ($('#bootstrap-megamenu-admin').removeClass('hidden'));
@@ -969,9 +971,9 @@ Drupal.TBMegaMenu = Drupal.TBMegaMenu || {};
   });
 
   $(window).load(function(){
-    Drupal.TBMegaMenu.initPanel();
-    Drupal.TBMegaMenu.initPreSubmit();
-    Drupal.TBMegaMenu.initRadioGroup();
-    Drupal.TBMegaMenu.prepare();
+    Drupal.BSMegaMenu.initPanel();
+    Drupal.BSMegaMenu.initPreSubmit();
+    Drupal.BSMegaMenu.initRadioGroup();
+    Drupal.BSMegaMenu.prepare();
   });
 }(jQuery);
