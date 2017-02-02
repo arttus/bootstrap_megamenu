@@ -542,7 +542,6 @@ Drupal.BSMegaMenu = Drupal.BSMegaMenu || {};
       url: Drupal.settings.basePath + Drupal.settings.pathPrefix + Drupal.BSMegaMenu.ajax_link + "admin/structure/bootstrap-megamenu/request",
       data: {'action': 'save', 'menu_name': options['menu_name'], 'use_v3': use_v3, 'menu_config': JSON.stringify(menu_config), 'block_config': JSON.stringify(block_config)},
       complete: function( msg ) {
-          alert('test');
         $('#bootstrap-megamenu-admin-mm-bs #toolbox-loading').hide();
 		$div = $('<div id="console" class="clearfix"><div class="messages status"><h2 class="element-invisible">Status message</h2>' + Drupal.t("Saved config sucessfully!") + '</div></div>');
         $('#bootstrap-megamenu-admin-mm-bs #toolbox-message').html($div).show();
