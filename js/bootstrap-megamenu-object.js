@@ -177,7 +177,7 @@ Drupal.BSMegaMenu = Drupal.BSMegaMenu || {};
     }
     if($('#bootstrap-megamenu-block-wrapper select[name="toolcol-block"]').val() != '') {
       value = $('#bootstrap-megamenu-block-wrapper select[name="toolcol-block"]').val();
-      $('#bootstrap-megamenu-admin-mm-tb #toolbox-loading').show();
+      $('#bootstrap-megamenu-admin-mm-bs #toolbox-loading').show();
       callAjax({'action': 'load_block', 'block_key': value, 'id': currentSelected.attr('id'), 'showblocktitle': parseInt(currentSelected.attr('data-showblocktitle'))});
     }
   }
@@ -429,8 +429,8 @@ Drupal.BSMegaMenu = Drupal.BSMegaMenu || {};
       return;
     }
     Drupal.BSMegaMenu.lockAjax();
-    $('#bootstrap-megamenu-admin-mm-tb #toolbox-message').html("").hide();
-    $('#bootstrap-megamenu-admin-mm-tb #toolbox-loading').show();
+    $('#bootstrap-megamenu-admin-mm-bs #toolbox-message').html("").hide();
+    $('#bootstrap-megamenu-admin-mm-bs #toolbox-loading').show();
     $.ajax({
       type: "POST",
       url: Drupal.settings.basePath + Drupal.settings.pathPrefix + Drupal.BSMegaMenu.ajax_link + Drupal.BSMegaMenu.ajax_link + "admin/structure/bootstrap-megamenu/request",
@@ -440,10 +440,10 @@ Drupal.BSMegaMenu = Drupal.BSMegaMenu || {};
         $('#bootstrap-megamenu-admin-mm-container').find('.mega-inner').children('span.close').click(function() {
           $(this).parent().html("");
         });
-        $('#bootstrap-megamenu-admin-mm-tb #toolbox-loading').hide();
-        $('#bootstrap-megamenu-admin-mm-tb #toolbox-message').html(Drupal.t("All unsaved changed has been reseted!")).show();
+        $('#bootstrap-megamenu-admin-mm-bs #toolbox-loading').hide();
+        $('#bootstrap-megamenu-admin-mm-bs #toolbox-message').html(Drupal.t("All unsaved changed has been reseted!")).show();
         window.setTimeout(function() {
-          $('#bootstrap-megamenu-admin-mm-tb #toolbox-message').html("").hide();
+          $('#bootstrap-megamenu-admin-mm-bs #toolbox-message').html("").hide();
         }, 5000);
         Drupal.BSMegaMenu.releaseAjax();
       }
@@ -529,8 +529,8 @@ Drupal.BSMegaMenu = Drupal.BSMegaMenu || {};
     block_config['style'] = $('select[name="bootstrap-megamenu-style"]').val();
     block_config['auto-arrow'] = $('#bootstrap-megamenu-admin-mm-intro .toolitem-auto-arrow').attr('data-auto-arrow');
     block_config['always-show-submenu'] = $('#bootstrap-megamenu-admin-mm-intro .toolitem-always-show-submenu').attr('data-always-show-submenu');
-    $('#bootstrap-megamenu-admin-mm-tb #toolbox-message').html("").hide();
-    $('#bootstrap-megamenu-admin-mm-tb #toolbox-loading').show();
+    $('#bootstrap-megamenu-admin-mm-bs #toolbox-message').html("").hide();
+    $('#bootstrap-megamenu-admin-mm-bs #toolbox-loading').show();
     if($('input[name="use_v3"]').is(':checked')){
       use_v3 = 1;
     }
@@ -542,11 +542,13 @@ Drupal.BSMegaMenu = Drupal.BSMegaMenu || {};
       url: Drupal.settings.basePath + Drupal.settings.pathPrefix + Drupal.BSMegaMenu.ajax_link + "admin/structure/bootstrap-megamenu/request",
       data: {'action': 'save', 'menu_name': options['menu_name'], 'use_v3': use_v3, 'menu_config': JSON.stringify(menu_config), 'block_config': JSON.stringify(block_config)},
       complete: function( msg ) {
-        $('#bootstrap-megamenu-admin-mm-tb #toolbox-loading').hide();
+          alert('test');
+        $('#bootstrap-megamenu-admin-mm-bs #toolbox-loading').hide();
 		$div = $('<div id="console" class="clearfix"><div class="messages status"><h2 class="element-invisible">Status message</h2>' + Drupal.t("Saved config sucessfully!") + '</div></div>');
-        $('#bootstrap-megamenu-admin-mm-tb #toolbox-message').html($div).show();
+        $('#bootstrap-megamenu-admin-mm-bs #toolbox-message').html($div).show();
         window.setTimeout(function() {
-          $('#bootstrap-megamenu-admin-mm-tb #toolbox-message').html("").hide();
+
+          $('#bootstrap-megamenu-admin-mm-bs #toolbox-message').html("").hide();
         }, 5000);
         Drupal.BSMegaMenu.releaseAjax();
       }
@@ -558,7 +560,7 @@ Drupal.BSMegaMenu = Drupal.BSMegaMenu || {};
   }
 
   hide_toolbox = function (show_intro) {
-    $('#bootstrap-megamenu-admin-mm-tb .admin-toolbox').hide();
+    $('#bootstrap-megamenu-admin-mm-bs .admin-toolbox').hide();
     currentSelected = null;
     if (megamenu && megamenu.data('nav_all')) megamenu.data('nav_all').removeClass ('selected');
     megamenu.find ('li').removeClass ('open');
@@ -596,15 +598,15 @@ Drupal.BSMegaMenu = Drupal.BSMegaMenu || {};
     $('#bootstrap-megamenu-admin-mm-tool' + type).show();
     update_toolbox (type);
 
-    $('#bootstrap-megamenu-admin-mm-tb').show();
+    $('#bootstrap-megamenu-admin-mm-bs').show();
   }
 
   update_toolbox = function (type) {
     if (!type) {
       type = toolbox_type ();
     }
-    $('#bootstrap-megamenu-admin-mm-tb .disabled').removeClass('disabled');
-    $('#bootstrap-megamenu-admin-mm-tb .active').removeClass('active');
+    $('#bootstrap-megamenu-admin-mm-bs .disabled').removeClass('disabled');
+    $('#bootstrap-megamenu-admin-mm-bs .active').removeClass('active');
     switch (type) {
       case 'item':
         var liitem = currentSelected.closest('li'),
@@ -788,7 +790,7 @@ Drupal.BSMegaMenu = Drupal.BSMegaMenu || {};
     case 'block':
       if (currentSelected.find ('ul[class*="level"]').length == 0) {
         if (value) {
-          $('#bootstrap-megamenu-admin-mm-tb #toolbox-loading').show();
+          $('#bootstrap-megamenu-admin-mm-bs #toolbox-loading').show();
           callAjax({'action': 'load_block', 'block_key': value, 'id': currentSelected.attr('id'), 'showblocktitle': parseInt(currentSelected.attr('data-showblocktitle'))});
         }
         else {
@@ -826,7 +828,7 @@ Drupal.BSMegaMenu = Drupal.BSMegaMenu || {};
                 $(this).parent().html("");
               });
             }
-            $('#bootstrap-megamenu-admin-mm-tb #toolbox-loading').hide();
+            $('#bootstrap-megamenu-admin-mm-bs #toolbox-loading').hide();
             Drupal.BSMegaMenu.releaseAjax();
           }
         });
