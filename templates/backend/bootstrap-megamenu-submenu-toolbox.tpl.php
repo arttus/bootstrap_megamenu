@@ -46,6 +46,7 @@
       <label class="hasTip"><?php print t('Extra class') ?></label>
       <fieldset class="">
         <input type="text" class="toolsub-exclass toolbox-input input-medium" name="toolsub-exclass" data-name="class" value="" />
+                <div><small>Add class 'full-width-menu' to make a full width submenu </div>
       </fieldset>
     </li>
   </ul>
