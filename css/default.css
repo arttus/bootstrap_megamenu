@@ -760,18 +760,18 @@
 .bootstrap-megamenu .navbar-collapse .dropdown-menu li + li a {
     margin-bottom: 2px;
   }
-.bootstrap-megamenu ..navbar-collapse .nav > li > a:hover,
-.bootstrap-megamenu ..navbar-collapse .nav > li > a:focus,
+.bootstrap-megamenu .navbar-collapse .nav > li > a:hover,
+.bootstrap-megamenu .navbar-collapse .nav > li > a:focus,
 .bootstrap-megamenu .navbar-collapse .dropdown-menu a:hover,
 .bootstrap-megamenu .navbar-collapse .dropdown-menu a:focus {
     background-color: #f2f2f2;
   }
-.bootstrap-megamenu .navbar-inverse ..navbar-collapse .nav > li > a,
+.bootstrap-megamenu .navbar-inverse .navbar-collapse .nav > li > a,
 .bootstrap-megamenu .navbar-inverse .navbar-collapse .dropdown-menu a {
     color: #999999;
   }
-.bootstrap-megamenu .navbar-inverse ..navbar-collapse .nav > li > a:hover,
-.bootstrap-megamenu .navbar-inverse ..navbar-collapse .nav > li > a:focus,
+.bootstrap-megamenu .navbar-inverse .navbar-collapse .nav > li > a:hover,
+.bootstrap-megamenu .navbar-inverse .navbar-collapse .nav > li > a:focus,
 .bootstrap-megamenu .navbar-inverse .navbar-collapse .dropdown-menu a:hover,
 .bootstrap-megamenu .navbar-inverse .navbar-collapse .dropdown-menu a:focus {
     background-color: #111111;
@@ -808,8 +808,8 @@
 .bootstrap-megamenu .navbar-collapse .dropdown-menu .divider {
     display: none;
   }
-.bootstrap-megamenu ..navbar-collapse .nav > li > .dropdown-menu:before,
-.bootstrap-megamenu ..navbar-collapse .nav > li > .dropdown-menu:after {
+.bootstrap-megamenu .navbar-collapse .nav > li > .dropdown-menu:before,
+.bootstrap-megamenu .navbar-collapse .nav > li > .dropdown-menu:after {
     display: none;
   }
 .bootstrap-megamenu .navbar-collapsebar-form,
