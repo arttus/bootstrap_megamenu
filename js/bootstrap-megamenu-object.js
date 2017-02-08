@@ -976,5 +976,8 @@ Drupal.BSMegaMenu = Drupal.BSMegaMenu || {};
     Drupal.BSMegaMenu.initPreSubmit();
     Drupal.BSMegaMenu.initRadioGroup();
     Drupal.BSMegaMenu.prepare();
+     $(".bootstrap-megamenu-submenu.full-width-menu").each(function(){
+        $(this).css("min-width", $("#bootstrap-megamenu-configure-form").width()+"px");
+      }); 
   });
 }(jQuery);
