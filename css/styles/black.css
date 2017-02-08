@@ -172,7 +172,7 @@
 }
 
 @media (max-width: 738px) {
-  .bootstrap-megamenu.style-black .navbar-collapse .nav li a {
+  .bootstrap-megamenu.style-black .navbar-collapse li a {
 	 border-top-color: #444;
   }
   .bootstrap-megamenu.style-black .navbar-collapse .nav > li > a,

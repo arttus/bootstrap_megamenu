@@ -6,7 +6,7 @@ Drupal.BSMegaMenu = Drupal.BSMegaMenu || {};
   Drupal.BSMegaMenu.supportedScreens = [980];
   Drupal.BSMegaMenu.menuResponsive = function () {
     var windowWidth = window.innerWidth ? window.innerWidth : $(window).width();
-    var navCollapse = $('.bootstrap-megamenu').children('.nav-collapse');
+    var navCollapse = $('.bootstrap-megamenu').children('.navbar-collapse');
     if (windowWidth < Drupal.BSMegaMenu.supportedScreens[0]) {
       navCollapse.addClass('collapse');
       if (Drupal.BSMegaMenu.displayedMenuMobile) {
@@ -28,12 +28,12 @@ Drupal.BSMegaMenu = Drupal.BSMegaMenu || {};
       $('.bootstrap-megamenu-button', context).once('menuIstance', function () {
         var This = this;
         $(This).click(function() {
-          if(parseInt($(this).parent().children('.nav-collapse').height())) {
-            $(this).parent().children('.nav-collapse').css({height: 0, overflow: 'hidden'});
+          if(parseInt($(this).parent().children('.navbar-collapse').height())) {
+            $(this).parent().children('.navbar-collapse').css({height: 0, overflow: 'hidden'});
             Drupal.BSMegaMenu.displayedMenuMobile = false;
           }
           else {
-            $(this).parent().children('.nav-collapse').css({height: 'auto', overflow: 'visible'});
+            $(this).parent().children('.navbar-collapse').css({height: 'auto', overflow: 'visible'});
             Drupal.BSMegaMenu.displayedMenuMobile = true;
           }
         });
@@ -81,8 +81,14 @@ Drupal.BSMegaMenu = Drupal.BSMegaMenu || {};
           });
         });
       }
-      
+
+      $(".bootstrap-megamenu-submenu.full-width-menu").each(function(){
+        $(this).css("min-width", ($(this).parents(".bootstrap-megamenu-nav.level-0").width())+"px");
+      });     
       $(window).resize(function() {
+         $(".bootstrap-megamenu-submenu.full-width-menu").each(function(){
+        $(this).css("min-width", ($(this).parents(".bootstrap-megamenu-nav.level-0").width())+"px");
+      });
         var windowWidth = window.innerWidth ? window.innerWidth : $(window).width();
         if (windowWidth != Drupal.BSMegaMenu.oldWindowWidth) {
           Drupal.BSMegaMenu.oldWindowWidth = windowWidth;

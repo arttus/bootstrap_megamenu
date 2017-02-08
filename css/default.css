@@ -1352,23 +1352,23 @@
     width: 100%;
     z-index: 1000;
   }
-.bootstrap-megamenu .navbar-collapse-fixed-top .nav-collapse.in,
-.bootstrap-megamenu .navbar-collapse-fixed-bottom .nav-collapse.in {
+.bootstrap-megamenu .navbar-collapse-fixed-top .navbar-collapse.in,
+.bootstrap-megamenu .navbar-collapse-fixed-bottom .navbar-collapse.in {
     position: fixed;
     width: 100%;
     overflow-y: auto;
     top: 40px;
     bottom: 0;
   }
-.bootstrap-megamenu .navbar-collapse-fixed-top .nav-collapse.in > *,
-.bootstrap-megamenu .navbar-collapse-fixed-bottom .nav-collapse.in > * {
+.bootstrap-megamenu .navbar-collapse-fixed-top .navbar-collapse.in > *,
+.bootstrap-megamenu .navbar-collapse-fixed-bottom .navbar-collapse.in > * {
     padding-bottom: 50px;
   }
 .bootstrap-megamenu .navbar-collapse-fixed-bottom {
     bottom: 0;
     top: auto;
   }
-.bootstrap-megamenu .navbar-collapse-fixed-bottom .nav-collapse.in {
+.bootstrap-megamenu .navbar-collapse-fixed-bottom .navbar-collapse.in {
     top: 0;
     bottom: 40px;
   }
@@ -1385,7 +1385,7 @@
 .bootstrap-megamenu .navbar-btn:hover {
     cursor: pointer;
   }
-.bootstrap-megamenu .nav-collapse {
+.bootstrap-megamenu .navbar-collapse .nav {
     background: #000;
     margin-top: 10px;
   position: absolute;
@@ -1393,15 +1393,15 @@
   width: 100%;
   z-index: 999;
   }
-.bootstrap-megamenu .nav-collapse .nav {
+.bootstrap-megamenu .navbar-collapse .nav{
     margin: 0;
   }
-.bootstrap-megamenu .nav-collapse .nav > li > a {
+.bootstrap-megamenu .navbar-collapse .nav > li > a {
     font-size: 15px;
     margin-bottom: 0;
   }
-.bootstrap-megamenu .nav-collapse .nav > li > a,
-.bootstrap-megamenu .nav-collapse .dropdown-menu a {
+.bootstrap-megamenu .navbar-collapse .nav > li > a,
+.bootstrap-megamenu .navbar-collapse .dropdown-menu a {
     border-bottom: 1px solid #222;
   border-right: none;
   color: #fff;
@@ -1410,33 +1410,33 @@
     -moz-border-radius: 0;
     border-radius: 0;
   }
-.bootstrap-megamenu .nav-collapse .dropdown-menu li + li a {
+.bootstrap-megamenu .navbar-collapse .dropdown-menu li + li a {
     margin-bottom: 0;
   }
-.bootstrap-megamenu .nav-collapse .nav > li > a:hover,
-.bootstrap-megamenu .nav-collapse .nav > li > a:focus {
+.bootstrap-megamenu .navbar-collapse .nav > li > a:hover,
+.bootstrap-megamenu .navbar-collapse .nav > li > a:focus {
     background-color: #fff;
     background-image: none;
     filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
   color: #e54e4b;
   }
-.bootstrap-megamenu .nav-collapse .nav > li.active > a:hover,
-.bootstrap-megamenu .nav-collapse .nav > li.active > a:focus {
+.bootstrap-megamenu .navbar-collapse .nav > li.active > a:hover,
+.bootstrap-megamenu .navbar-collapse .nav > li.active > a:focus {
   background-color: #e54e4b;
 }
-.bootstrap-megamenu .nav-collapse .dropdown-menu a {
+.bootstrap-megamenu .navbar-collapse .dropdown-menu a {
     border-top: 1px solid #222;
     border-bottom: 0;
     font-weight: normal;
     padding: 10px 20px;
   }
-.bootstrap-megamenu .nav-collapse .dropdown-menu a:hover,
-.bootstrap-megamenu .nav-collapse .dropdown-menu a:focus {
+.bootstrap-megamenu .navbar-collapse .dropdown-menu a:hover,
+.bootstrap-megamenu .navbar-collapse .dropdown-menu a:focus {
     background-color: inherit;
     background-image: none;
     filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
   }
-.bootstrap-megamenu .nav-collapse .dropdown-menu {
+.bootstrap-megamenu .navbar-collapse .dropdown-menu {
     margin: 0;
     padding: 0;
     background-color: #000;

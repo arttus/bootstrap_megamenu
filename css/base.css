@@ -951,25 +951,25 @@
 		margin-right: 3px;
 		margin-bottom: 3px;
 	}
-.bootstrap-megamenu .navbar-collapse .nav .nav-header {
+.bootstrap-megamenu .navbar-collapse-header {
 		color: #fff;
 	}
 .bootstrap-megamenu .navbar-collapse.collapse.in {
 		height: auto !important;
 	}
-.bootstrap-megamenu .navbar-collapse .nav,
-.bootstrap-megamenu .navbar .navbar-collapse .nav.pull-right {
+.bootstrap-megamenu .navbar-collapse,
+.bootstrap-megamenu .navbar .navbar-collapse.pull-right {
 		margin: 0;
 	}
 .bootstrap-megamenu .navbar-collapse .dropdown-menu {
 		margin: 0;
 	}
-.bootstrap-megamenu .navbar-collapse .nav li a {
+.bootstrap-megamenu .navbar-collapse li a {
 		margin-bottom: 0;
 		border-top: 1px solid #d9d9d9;
 	}
-.bootstrap-megamenu .navbar-collapse .nav li ul li ul.dropdown-menu,
-.bootstrap-megamenu .navbar-collapse .nav li ul li:hover ul.dropdown-menu,
+.bootstrap-megamenu .navbar-collapse li ul li ul.dropdown-menu,
+.bootstrap-megamenu .navbar-collapse li ul li:hover ul.dropdown-menu,
 .bootstrap-megamenu .navbar-collapse .caret {
 		display: none !important;
 	}
