@@ -219,7 +219,7 @@ function template_preprocess_bootstrap_megamenu_row(&$vars) {
     ));
   }
   $vars['columns'] = implode("\n", $cols);
-  $vars['classes_array'][] = 'clearfix';
+  $vars['classes_array'][] = 'row clearfix';
 }
 
 function template_preprocess_bootstrap_megamenu_column(&$vars) {
