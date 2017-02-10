@@ -18,7 +18,7 @@ function template_preprocess_bootstrap_megamenu(&$vars) {
   bootstrap_megamenu_sync_config_all($items, $menu_config, $vars['section']);
   bootstrap_megamenu_edit_block_config($block_config);
   $vars['classes_array'][] = "bootstrap-megamenu-" . str_replace('_', '-', $menu_name);
-  if ($vars['section'] == 'frontend' && $block_config['style'] != '') {
+  if ($vars['section'] == 'frontend' && $block_config['style'] != '' ) {
     drupal_add_css(drupal_get_path("module", "bootstrap_megamenu") . "/css/styles/" . $block_config['style'] . ".css", array(
       'basename' => "bootstrap-megamenu-style-" . $block_config['style'] . ".css",
     ));
@@ -219,7 +219,7 @@ function template_preprocess_bootstrap_megamenu_row(&$vars) {
     ));
   }
   $vars['columns'] = implode("\n", $cols);
-  $vars['classes_array'][] = 'row';
+  $vars['classes_array'][] = 'clearfix';
 }
 
 function template_preprocess_bootstrap_megamenu_column(&$vars) {

@@ -477,6 +477,7 @@ function bootstrap_megamenu_animation_options($block_config) {
 
 function bootstrap_megamenu_style_options($block_config) {
   $styles = array(
+    'no_style' => t('No Style'),
     '' => t('Default'),
     'black' => t('Black'),
     'blue' => t('Blue'),

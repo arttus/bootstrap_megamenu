@@ -248,6 +248,7 @@ function bootstrap_megamenu_block_view($delta = 0) {
     bootstrap_megamenu_add_css(drupal_get_path('module', 'bootstrap_megamenu') . '/css/bootstrap.css');
     }
     bootstrap_megamenu_add_css(drupal_get_path('module', 'bootstrap_megamenu') . '/css/base.css');
+
     bootstrap_megamenu_add_css(drupal_get_path('module', 'bootstrap_megamenu') . '/css/default.css');
     bootstrap_megamenu_add_css(drupal_get_path('module', 'bootstrap_megamenu') . '/css/compatibility.css');
     drupal_add_js(drupal_get_path('module', 'bootstrap_megamenu') . '/js/bootstrap-megamenu-frontend.js');
