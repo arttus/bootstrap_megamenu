@@ -26,7 +26,13 @@
   -moz-transition: all 0.1s ease 0s;
   background: white;
 }
-
+.bootstrap-megamenu .nav > li.relative-list {
+  position: inherit;
+}
+.bootstrap-megamenu .bootstrap-megamenu-submenu.full-width-menu {
+  position: absolute;
+  min-width: 100% ;
+}
 
 /* The Nav ---*/
 .bootstrap-megamenu .col-md-12.mega-col-nav .mega-inner {

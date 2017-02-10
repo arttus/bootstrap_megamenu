@@ -977,7 +977,14 @@ Drupal.BSMegaMenu = Drupal.BSMegaMenu || {};
     Drupal.BSMegaMenu.initRadioGroup();
     Drupal.BSMegaMenu.prepare();
     $(".bootstrap-megamenu-submenu.full-width-menu").each(function(){
+       var list = $(this).parents(".bootstrap-megamenu-item");
         $(this).parents(".bootstrap-megamenu-item").addClass("relative-list");
+        var form = $(this).parents("form");
+       
+        x = $(list).position().left;
+       
+        $(this).css("width", $(form).width()+"px");
+         $(this).css("left", (x *-1)+"px");
       });  
   });
 }(jQuery);
