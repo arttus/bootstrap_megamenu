@@ -81,14 +81,12 @@ Drupal.BSMegaMenu = Drupal.BSMegaMenu || {};
           });
         });
       }
-
+     
       $(".bootstrap-megamenu-submenu.full-width-menu").each(function(){
-        $(this).css("min-width", ($(this).parents(".bootstrap-megamenu-nav.level-0").width())+"px");
-      });     
+        $(this).parents(".bootstrap-megamenu-item").addClass("relative-list");
+      });       
       $(window).resize(function() {
-         $(".bootstrap-megamenu-submenu.full-width-menu").each(function(){
-        $(this).css("min-width", ($(this).parents(".bootstrap-megamenu-nav.level-0").width())+"px");
-      });
+       
         var windowWidth = window.innerWidth ? window.innerWidth : $(window).width();
         if (windowWidth != Drupal.BSMegaMenu.oldWindowWidth) {
           Drupal.BSMegaMenu.oldWindowWidth = windowWidth;

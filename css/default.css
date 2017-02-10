@@ -26,6 +26,13 @@
   float: left;
   margin-left: 0;
 }
+.bootstrap-megamenu .nav > li.relative-list {
+  position: inherit;
+}
+.bootstrap-megamenu .bootstrap-megamenu-submenu.full-width-menu {
+  position: absolute;
+  min-width: 100%;
+}
 .bootstrap-megamenu .nav > li > a {
   border-right: 1px solid #222;
   border-top: 0;
