@@ -23,7 +23,7 @@
   background-color: transparent;
   border: 0;
 }
-.bootstrap-megamenu .input-block-level {
+.bootstrap-megamenu .form-control {
   display: block;
   width: 100%;
   min-height: 30px;
@@ -36,7 +36,10 @@
   float: left;
   min-height: 1px;
   margin-left: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
+
 .bootstrap-megamenu .row {
   width: 100%;
   *zoom: 1;
@@ -201,7 +204,7 @@
   -moz-box-shadow: none;
   box-shadow: none;
 }
-.bootstrap-megamenu .btn-large {
+.bootstrap-megamenu .btn-lg {
   padding: 11px 19px;
   font-size: 17.5px;
   -webkit-border-radius: 6px;
@@ -209,14 +212,14 @@
   border-radius: 6px;
 }
 
-.bootstrap-megamenu .btn-small {
+.bootstrap-megamenu .btn-sm {
   padding: 2px 10px;
   font-size: 11.9px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
 }
-.bootstrap-megamenu .btn-mini {
+.bootstrap-megamenu .btn-xs {
   padding: 0 6px;
   font-size: 10.5px;
   -webkit-border-radius: 3px;
@@ -450,18 +453,18 @@
   padding: 0;
   border: 0;
 }
-.bootstrap-megamenu button.btn.btn-large,
-.bootstrap-megamenu input[type="submit"].btn.btn-large {
+.bootstrap-megamenu button.btn.btn-lg,
+.bootstrap-megamenu input[type="submit"].btn.btn-lg {
   *padding-top: 7px;
   *padding-bottom: 7px;
 }
-.bootstrap-megamenu button.btn.btn-small,
-.bootstrap-megamenu input[type="submit"].btn.btn-small {
+.bootstrap-megamenu button.btn.btn-sm,
+.bootstrap-megamenu input[type="submit"].btn.btn-sm {
   *padding-top: 3px;
   *padding-bottom: 3px;
 }
-.bootstrap-megamenu button.btn.btn-mini,
-.bootstrap-megamenu input[type="submit"].btn.btn-mini {
+.bootstrap-megamenu button.btn.btn-xs,
+.bootstrap-megamenu input[type="submit"].btn.btn-xs {
   *padding-top: 1px;
   *padding-bottom: 1px;
 }
@@ -535,13 +538,13 @@
 .bootstrap-megamenu .btn-group > .popover {
   font-size: 14px;
 }
-.bootstrap-megamenu .btn-group > .btn-mini {
+.bootstrap-megamenu .btn-group > .btn-xs {
   font-size: 10.5px;
 }
-.bootstrap-megamenu .btn-group > .btn-small {
+.bootstrap-megamenu .btn-group > .btn-sm {
   font-size: 11.9px;
 }
-.bootstrap-megamenu .btn-group > .btn-large {
+.bootstrap-megamenu .btn-group > .btn-lg {
   font-size: 17.5px;
 }
 .bootstrap-megamenu .btn-group > .btn:first-child {
@@ -599,17 +602,17 @@
   *padding-top: 5px;
   *padding-bottom: 5px;
 }
-.bootstrap-megamenu .btn-group > .btn-mini + .dropdown-toggle {
+.bootstrap-megamenu .btn-group > .btn-xs + .dropdown-toggle {
   padding-left: 5px;
   padding-right: 5px;
   *padding-top: 2px;
   *padding-bottom: 2px;
 }
-.bootstrap-megamenu .btn-group > .btn-small + .dropdown-toggle {
+.bootstrap-megamenu .btn-group > .btn-sm + .dropdown-toggle {
   *padding-top: 5px;
   *padding-bottom: 4px;
 }
-.bootstrap-megamenu .btn-group > .btn-large + .dropdown-toggle {
+.bootstrap-megamenu .btn-group > .btn-lg + .dropdown-toggle {
   padding-left: 12px;
   padding-right: 12px;
   *padding-top: 7px;
@@ -646,19 +649,19 @@
   margin-top: 8px;
   margin-left: 0;
 }
-.bootstrap-megamenu .btn-large .caret {
+.bootstrap-megamenu .btn-lg .caret {
   margin-top: 6px;
 }
-.bootstrap-megamenu .btn-large .caret {
+.bootstrap-megamenu .btn-lg .caret {
   border-left-width: 5px;
   border-right-width: 5px;
   border-top-width: 5px;
 }
-.bootstrap-megamenu .btn-mini .caret,
-.bootstrap-megamenu .btn-small .caret {
+.bootstrap-megamenu .btn-xs .caret,
+.bootstrap-megamenu .btn-sm .caret {
   margin-top: 8px;
 }
-.bootstrap-megamenu .dropup .btn-large .caret {
+.bootstrap-megamenu .dropup .btn-lg .caret {
   border-bottom-width: 5px;
 }
 .bootstrap-megamenu .btn-primary .caret,
@@ -699,12 +702,12 @@
   -moz-border-radius: 0 0 4px 4px;
   border-radius: 0 0 4px 4px;
 }
-.bootstrap-megamenu .btn-group-vertical > .btn-large:first-child {
+.bootstrap-megamenu .btn-group-vertical > .btn-lg:first-child {
   -webkit-border-radius: 6px 6px 0 0;
   -moz-border-radius: 6px 6px 0 0;
   border-radius: 6px 6px 0 0;
 }
-.bootstrap-megamenu .btn-group-vertical > .btn-large:last-child {
+.bootstrap-megamenu .btn-group-vertical > .btn-lg:last-child {
   -webkit-border-radius: 0 0 6px 6px;
   -moz-border-radius: 0 0 6px 6px;
   border-radius: 0 0 6px 6px;
@@ -1765,27 +1768,27 @@
   -moz-border-radius: 4px;
   border-radius: 4px;
 }
-.bootstrap-megamenu .accordion {
+.bootstrap-megamenu .panel-group {
   margin-bottom: 20px;
 }
-.bootstrap-megamenu .accordion-group {
+.bootstrap-megamenu .panel-group-group {
   margin-bottom: 2px;
   border: 1px solid #e5e5e5;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
 }
-.bootstrap-megamenu .accordion-heading {
+.bootstrap-megamenu .panel-group-heading {
   border-bottom: 0;
 }
-.bootstrap-megamenu .accordion-heading .accordion-toggle {
+.bootstrap-megamenu .panel-group-heading .panel-group-toggle {
   display: block;
   padding: 8px 15px;
 }
-.bootstrap-megamenu .accordion-toggle {
+.bootstrap-megamenu .panel-group-toggle {
   cursor: pointer;
 }
-.bootstrap-megamenu .accordion-inner {
+.bootstrap-megamenu .panel-group-inner {
   padding: 9px 15px;
   border-top: 1px solid #e5e5e5;
 }
@@ -1843,29 +1846,29 @@
   display: none;
   visibility: hidden;
 }
-.bootstrap-megamenu .visible-phone {
+.bootstrap-megamenu .visible-xs {
   display: none !important;
 }
-.bootstrap-megamenu .visible-tablet {
+.bootstrap-megamenu .visible-sm {
   display: none !important;
 }
-.bootstrap-megamenu .hidden-desktop {
+.bootstrap-megamenu .hidden-md {
   display: none !important;
 }
-.bootstrap-megamenu .visible-desktop {
+.bootstrap-megamenu .visible-md {
   display: inherit !important;
 }
 @media (min-width: 768px) and (max-width: 979px) {
-.bootstrap-megamenu .hidden-desktop {
+.bootstrap-megamenu .hidden-md {
     display: inherit !important;
   }
-.bootstrap-megamenu .visible-desktop {
+.bootstrap-megamenu .visible-md {
     display: none !important ;
   }
-.bootstrap-megamenu .visible-tablet {
+.bootstrap-megamenu .visible-sm {
     display: inherit !important;
   }
-.bootstrap-megamenu .hidden-tablet {
+.bootstrap-megamenu .hidden-sm {
     display: none !important;
   }
 }
@@ -2098,105 +2101,7 @@
 .bootstrap-megamenu .row [class*="col-md-"]:first-child {
     margin-left: 0;
   }
-.bootstrap-megamenu .row .controls-row [class*="col-md-"] + [class*="col-md-"] {
-    margin-left: 2.564102564102564%;
-  }
-.bootstrap-megamenu .row .col-md-offset-12 {
-    margin-left: 105.12820512820512%;
-    *margin-left: 105.02182214948171%;
-  }
-.bootstrap-megamenu .row .col-md-offset-12:first-child {
-    margin-left: 102.56410256410257%;
-    *margin-left: 102.45771958537915%;
-  }
-.bootstrap-megamenu .row .col-md-offset-11 {
-    margin-left: 96.58119658119658%;
-    *margin-left: 96.47481360247316%;
-  }
-.bootstrap-megamenu .row .col-md-offset-11:first-child {
-    margin-left: 94.01709401709402%;
-    *margin-left: 93.91071103837061%;
-  }
-.bootstrap-megamenu .row .col-md-offset-10 {
-    margin-left: 88.03418803418803%;
-    *margin-left: 87.92780505546462%;
-  }
-.bootstrap-megamenu .row .col-md-offset-10:first-child {
-    margin-left: 85.47008547008548%;
-    *margin-left: 85.36370249136206%;
-  }
-.bootstrap-megamenu .row .col-md-offset-9 {
-    margin-left: 79.48717948717949%;
-    *margin-left: 79.38079650845607%;
-  }
-.bootstrap-megamenu .row .col-md-offset-9:first-child {
-    margin-left: 76.92307692307693%;
-    *margin-left: 76.81669394435352%;
-  }
-.bootstrap-megamenu .row .col-md-offset-8 {
-    margin-left: 70.94017094017094%;
-    *margin-left: 70.83378796144753%;
-  }
-.bootstrap-megamenu .row .col-md-offset-8:first-child {
-    margin-left: 68.37606837606839%;
-    *margin-left: 68.26968539734497%;
-  }
-.bootstrap-megamenu .row .col-md-offset-7 {
-    margin-left: 62.393162393162385%;
-    *margin-left: 62.28677941443899%;
-  }
-.bootstrap-megamenu .row .col-md-offset-7:first-child {
-    margin-left: 59.82905982905982%;
-    *margin-left: 59.72267685033642%;
-  }
-.bootstrap-megamenu .row .col-md-offset-6 {
-    margin-left: 53.84615384615384%;
-    *margin-left: 53.739770867430444%;
-  }
-.bootstrap-megamenu .row .col-md-offset-6:first-child {
-    margin-left: 51.28205128205128%;
-    *margin-left: 51.175668303327875%;
-  }
-.bootstrap-megamenu .row .col-md-offset-5 {
-    margin-left: 45.299145299145295%;
-    *margin-left: 45.1927623204219%;
-  }
-.bootstrap-megamenu .row .col-md-offset-5:first-child {
-    margin-left: 42.73504273504273%;
-    *margin-left: 42.62865975631933%;
-  }
-.bootstrap-megamenu .row .col-md-offset-4 {
-    margin-left: 36.75213675213675%;
-    *margin-left: 36.645753773413354%;
-  }
-.bootstrap-megamenu .row .col-md-offset-4:first-child {
-    margin-left: 34.18803418803419%;
-    *margin-left: 34.081651209310785%;
-  }
-.bootstrap-megamenu .row .col-md-offset-3 {
-    margin-left: 28.205128205128204%;
-    *margin-left: 28.0987452264048%;
-  }
-.bootstrap-megamenu .row .col-md-offset-3:first-child {
-    margin-left: 25.641025641025642%;
-    *margin-left: 25.53464266230224%;
-  }
-.bootstrap-megamenu .row .col-md-offset-2 {
-    margin-left: 19.65811965811966%;
-    *margin-left: 19.551736679396257%;
-  }
-.bootstrap-megamenu .row .col-md-offset-2:first-child {
-    margin-left: 17.094017094017094%;
-    *margin-left: 16.98763411529369%;
-  }
-.bootstrap-megamenu .row .col-md-offset-1 {
-    margin-left: 11.11111111111111%;
-    *margin-left: 11.004728132387708%;
-  }
-.bootstrap-megamenu .row .col-md-offset-1:first-child {
-    margin-left: 8.547008547008547%;
-    *margin-left: 8.440625568285142%;
-  }
+
 .bootstrap-megamenu input,
 .bootstrap-megamenu textarea,
 .bootstrap-megamenu .uneditable-input {

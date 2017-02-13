@@ -245,7 +245,7 @@
 }
 
 /* Fix Form display problem in Modules */
-.bootstrap-megamenu .bootstrap-block .control-group {
+.bootstrap-megamenu .bootstrap-block .form-group {
   margin-bottom: 5px;
 }
 

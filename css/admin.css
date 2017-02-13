@@ -268,7 +268,7 @@
 .bootstrap-megamenu input[type="time"], input[type="week"], input[type="number"],
 .bootstrap-megamenu input[type="email"], input[type="url"], input[type="search"],
 .bootstrap-megamenu input[type="tel"], input[type="color"], .uneditable-input,
-.bootstrap-megamenu .input-append .add-on, .input-prepend .add-on, .input-append .btn, .input-prepend .btn {
+.bootstrap-megamenu .input-append .input-group-addon, .input-prepend .input-group-addon, .input-append .btn, .input-prepend .btn {
   height: 22px;
   line-height: 22px;
 }
