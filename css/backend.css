@@ -31,7 +31,7 @@
 }
 .bootstrap-megamenu .bootstrap-megamenu-submenu.full-width-menu {
   position: absolute;
-  min-width: 100% ;
+  min-width: 100%;
 }
 
 /* The Nav ---*/
@@ -315,7 +315,7 @@
   white-space: normal;
 }
 #bootstrap-megamenu-admin .row [class*="col-md-"] {
-  margin-left: 2.12766%;
+  margin-left: 0;
 }
 #bootstrap-megamenu-admin .row [class*="col-md-"]:first-child {
   margin-left: 0;
