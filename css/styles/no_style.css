@@ -1,5 +1,5 @@
 .bootstrap-megamenu.style-no_style {
-  background: #F8F8F8;
+  background: none;
 }
 
 .bootstrap-megamenu.style-node_style  .nav > li > a {
@@ -7,12 +7,12 @@
 }
 
 .bootstrap-megamenu.style-no_style  .nav li.dropdown > .dropdown-toggle .caret {
-  border-bottom-color: #000000;
-  border-top-color: #000000;
+  border-bottom-color: none;
+  border-top-color: none;
 }
 
 .bootstrap-megamenu.style-no_style  .dropdown-menu {
-  border-bottom-color: #000000;
+  border-bottom: 0px;
 }
 
 .bootstrap-megamenu.style-no_style  .nav li.dropdown.active > .dropdown-toggle,
@@ -25,7 +25,7 @@
 .bootstrap-megamenu.style-no_style  .nav > li.dropdown.open.active > a:hover,
 .bootstrap-megamenu.style-no_style  .nav > li.dropdown.open.active > a:focus {
   background: none;
-  border-right-color: #4dc6f3;
+  border-right-color: none;
   color: #000000;
 }
 
@@ -61,7 +61,7 @@
   border: none;
 }
 .bootstrap-megamenu.style-no_style  .block-view-demo .views-field-field-image img {
-  border: 1px solid #eee;
+  border: none;
 }
 
 .bootstrap-megamenu.style-no_style  .block-view-demo .item-list ul li {
