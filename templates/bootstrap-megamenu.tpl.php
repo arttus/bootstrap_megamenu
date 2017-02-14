@@ -1,4 +1,4 @@
-<div <?php print $attributes;?> class="<?php print $classes;?>">
+<div <?php print $attributes;?> class="<?php print $classes;?> navbar">
   <?php if($section == 'frontend') :?>
     <button data-target=".navbar-collapse" data-toggle="collapse" class="btn navbar-btn bootstrap-megamenu-button" type="button">
       <i class="fa fa-reorder"></i>

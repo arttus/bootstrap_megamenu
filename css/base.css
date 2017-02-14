@@ -23,9 +23,8 @@
 .bootstrap-megamenu .mega-inner:after {
   clear: both;
 }
-.bootstrap-megamenu .row + .row {
+.bootstrap-megamenu .row {
   padding-top: 10px;
-  border-top: 1px solid #eeeeee;
 }
 .bootstrap-megamenu .mega > .mega-dropdown-menu {
   min-width: 200px;
@@ -143,7 +142,6 @@
 }
 .bootstrap-megamenu .nav > li > a:hover {
 	text-decoration: none;
-	background-color: #eee;
 }
 .bootstrap-megamenu .nav > .pull-right {
 	float: right;
