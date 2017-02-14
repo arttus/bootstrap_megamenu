@@ -88,15 +88,9 @@
 .bootstrap-megamenu .nav > li > .dropdown-menu:after {
   display: none;
 }
-.bootstrap-megamenu .dropdown-menu .disabled > a,
-.bootstrap-megamenu .dropdown-menu .disabled > a:hover {
-  color: #999;
-}
+
 .bootstrap-megamenu .mega-inner {
   padding: 10px;
-}
-.bootstrap-megamenu .row + .row {
-  border-top: 1px solid #ddd;
 }
 .bootstrap-megamenu .mega-nav > li a,
 .bootstrap-megamenu .dropdown-menu .mega-nav > li a {
@@ -255,12 +249,8 @@
   border-color: transparent;
   border-style: solid;
   border-width: 5px 0 5px 5px;
-  border-left-color: #cccccc;
   margin-top: 5px;
   margin-right: -10px;
-}
-.bootstrap-megamenu .dropdown-submenu:hover > a:after {
-  border-left-color: #eee;
 }
 .bootstrap-megamenu .dropdown-submenu.pull-left {
   float: none;
@@ -347,13 +337,6 @@
   }
 .bootstrap-megamenu .navbar-collapse .dropdown-menu li + li a {
     margin-bottom: 0;
-  }
-.bootstrap-megamenu .navbar-collapse .nav > li > a:hover,
-.bootstrap-megamenu .navbar-collapse .nav > li > a:focus {
-  
-    background-image: none;
-    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-
   }
 .bootstrap-megamenu .navbar-collapse .dropdown-menu a {
     border-bottom: 0;
@@ -558,9 +541,6 @@
 
 .bootstrap-megamenu .block-view-demo a:hover,
 .bootstrap-megamenu .block-view-demo a:focus {
-  background: none !important;
-  border: none !important;
-  color: #e54e4;
   text-decoration: none;
 }
 @media (max-width: 979px) {
